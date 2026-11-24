@@ -99,6 +99,312 @@
    "description": "A Hague Court of Arbitration ruled in August 2026 that India must uphold its 65-year-old water-sharing treaty with Pakistan, which India promptly rejected as \"illegally constituted,\" while record-low Rhine water levels the same year repeatedly halted European river shipping — together showing that water disputes are no longer confined to remote basins but now reach international courts and continental supply chains."
   }
  ],
+ "megatrends": [
+  {
+   "name": "Climate change and hydrological disruption",
+   "description": "Global warming is shifting rainfall, evaporation and inflow patterns in river basins worldwide, changing the volume and reliability of water available for ecosystems, agriculture and communities."
+  },
+  {
+   "name": "Freshwater scarcity intensifying globally",
+   "description": "Population growth, agricultural demand and climate variability are pushing more of the world's major river basins toward chronic water stress, sharpening competition between environmental, agricultural and urban water users."
+  },
+  {
+   "name": "Geopolitical fragmentation and energy price shocks",
+   "description": "Rising geopolitical instability, including conflict-driven oil price shocks, is increasing the volatility of fuel and energy costs that underpin irrigated agriculture, transport and food-processing worldwide."
+  },
+  {
+   "name": "Institutional trust decline and governance fragmentation",
+   "description": "Public trust in the institutions that manage shared natural resources is declining globally, as affected communities increasingly contest whether large-scale reform processes reflect their interests or are imposed on them."
+  },
+  {
+   "name": "Digitalisation and AI-enabled resource management",
+   "description": "Remote sensing, AI, blockchain and smart metering are being adopted globally to monitor and allocate scarce natural resources with greater precision, though adoption is uneven between well-resourced and remote regions."
+  },
+  {
+   "name": "Indigenous rights recognition and self-determination",
+   "description": "Indigenous peoples worldwide are gaining greater formal recognition of rights, ownership and decision-making authority over land and water, after long histories of exclusion from resource governance."
+  },
+  {
+   "name": "Rural-to-urban migration and regional population decline",
+   "description": "Economic and environmental pressures are accelerating population decline in agriculture-dependent rural regions globally, straining the viability of small-town services, schools and industry."
+  },
+  {
+   "name": "Rising cost-of-production pressure on global agriculture",
+   "description": "Input costs for global agriculture, including fuel, fertiliser, water and labour, are rising faster than farm-gate prices in many regions, compressing margins and accelerating industry consolidation."
+  },
+  {
+   "name": "Zoonotic disease emergence and biosecurity risk",
+   "description": "The global spread of high-pathogenicity avian influenza (H5N1) into new wild-bird populations, poultry and mammals is heightening biosecurity risk worldwide, sharpening pandemic-preparedness agendas well beyond the traditional human-health sector."
+  },
+  {
+   "name": "Biodiversity loss and invasive species spread",
+   "description": "Invasive species are a leading global driver of biodiversity loss, degrading native ecosystems and freshwater food webs and consuming growing shares of conservation funding and effort worldwide."
+  },
+  {
+   "name": "Rising mental health burden amid climate and economic stress",
+   "description": "Sustained drought, extreme weather and financial pressure are driving well-documented increases in anxiety, depression and suicide risk in agricultural communities worldwide, pushing mental health further into mainstream climate and rural-policy agendas."
+  },
+  {
+   "name": "Global energy transition and grid modernisation",
+   "description": "Countries worldwide are building large-scale renewable generation and the transmission infrastructure to carry it, frequently running new high-voltage lines through farming and regional land, generating real land-use and cost-sharing tensions with host communities."
+  }
+ ],
+ "issues": [
+  {
+   "name": "Basin Plan implementation and trust breakdown",
+   "importance": 5,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Institutional trust decline and governance fragmentation"
+   ],
+   "trends": [
+    "Widening trust gap between the MDBA and Basin communities over the Basin Plan review"
+   ]
+  },
+  {
+   "name": "Water buybacks and socioeconomic impact on irrigation towns",
+   "importance": 5,
+   "uncertainty": 2,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Rural-to-urban migration and regional population decline",
+    "Rising cost-of-production pressure on global agriculture"
+   ],
+   "trends": [
+    "Escalating water buyback socioeconomic backlash from Basin towns and state governments"
+   ]
+  },
+  {
+   "name": "First Nations water rights and cultural water recognition",
+   "importance": 4,
+   "uncertainty": 3,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Indigenous rights recognition and self-determination"
+   ],
+   "trends": [
+    "Growing recognition of First Nations water rights through the Aboriginal Water Entitlements Program"
+   ]
+  },
+  {
+   "name": "Ecological collapse risk: fish kills and algal events",
+   "importance": 4,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Climate change and hydrological disruption"
+   ],
+   "trends": [
+    "Recurring mass fish deaths and algal events in the Barwon-Darling/Menindee system"
+   ]
+  },
+  {
+   "name": "Fuel and energy price shocks hitting Basin agriculture",
+   "importance": 3,
+   "uncertainty": 4,
+   "quadrant": "Unclassified",
+   "megatrends": [
+    "Geopolitical fragmentation and energy price shocks",
+    "Rising cost-of-production pressure on global agriculture"
+   ],
+   "trends": [
+    "Rising fuel and input costs compounding water-driven cost pressure on Basin irrigators"
+   ]
+  },
+  {
+   "name": "Water market volatility and irrigator financial viability",
+   "importance": 4,
+   "uncertainty": 3,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Freshwater scarcity intensifying globally",
+    "Rising cost-of-production pressure on global agriculture"
+   ],
+   "trends": [
+    "Persistent water market price volatility under buyback policy and climate variability"
+   ]
+  },
+  {
+   "name": "Climate-driven water scarcity and reduced inflows",
+   "importance": 5,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Climate change and hydrological disruption",
+    "Freshwater scarcity intensifying globally"
+   ],
+   "trends": [
+    "Intensifying climate-driven water scarcity outlook for the Basin"
+   ]
+  },
+  {
+   "name": "Regional economic decline in water-reform-affected towns",
+   "importance": 3,
+   "uncertainty": 2,
+   "quadrant": "Unclassified",
+   "megatrends": [
+    "Rural-to-urban migration and regional population decline"
+   ],
+   "trends": [
+    "River tourism and heritage investment growing in Basin towns"
+   ]
+  },
+  {
+   "name": "Emerging water-technology adoption gap",
+   "importance": 2,
+   "uncertainty": 3,
+   "quadrant": "Unclassified",
+   "megatrends": [
+    "Digitalisation and AI-enabled resource management"
+   ],
+   "trends": [
+    "Increasing adoption of remote-sensing, AI and blockchain technology in Basin water management"
+   ]
+  },
+  {
+   "name": "Dairy and irrigated agriculture viability under water reform",
+   "importance": 4,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Freshwater scarcity intensifying globally",
+    "Rising cost-of-production pressure on global agriculture"
+   ],
+   "trends": [
+    "Rising fuel and input costs compounding water-driven cost pressure on Basin irrigators",
+    "Persistent water market price volatility under buyback policy and climate variability"
+   ]
+  },
+  {
+   "name": "Avian influenza and wildlife-disease risk in Basin wetlands",
+   "importance": 5,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Zoonotic disease emergence and biosecurity risk"
+   ],
+   "trends": [
+    "Emerging H5N1 wildlife-disease risk spreading through Basin wetlands"
+   ]
+  },
+  {
+   "name": "Invasive carp and the National Carp Control Plan",
+   "importance": 4,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Biodiversity loss and invasive species spread"
+   ],
+   "trends": [
+    "Delayed but continuing progress on Basin-wide carp biocontrol"
+   ]
+  },
+  {
+   "name": "Flood risk and salinity change under a variable Basin climate",
+   "importance": 4,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Climate change and hydrological disruption"
+   ],
+   "trends": [
+    "Growing recognition that Basin climate risk cuts both ways"
+   ]
+  },
+  {
+   "name": "Rural mental health and drought-related distress in Basin farming communities",
+   "importance": 5,
+   "uncertainty": 2,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Rising mental health burden amid climate and economic stress"
+   ],
+   "trends": [
+    "Escalating calls for sustained rural mental health investment amid compounding drought and cost pressures"
+   ]
+  },
+  {
+   "name": "Groundwater extraction and floodplain harvesting compliance",
+   "importance": 4,
+   "uncertainty": 4,
+   "quadrant": "Critical Uncertainty",
+   "megatrends": [
+    "Freshwater scarcity intensifying globally",
+    "Institutional trust decline and governance fragmentation"
+   ],
+   "trends": [
+    "NSW and Queensland tightening floodplain harvesting compliance amid persistent metering gaps"
+   ]
+  },
+  {
+   "name": "Renewable energy and transmission build-out through Basin farmland",
+   "importance": 3,
+   "uncertainty": 4,
+   "quadrant": "Unclassified",
+   "megatrends": [
+    "Global energy transition and grid modernisation"
+   ],
+   "trends": [
+    "Cost blowouts and community pushback slowing Basin transmission build-out"
+   ]
+  },
+  {
+   "name": "Independent oversight of Basin water compliance",
+   "importance": 4,
+   "uncertainty": 3,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Institutional trust decline and governance fragmentation"
+   ],
+   "trends": [
+    "Independent compliance oversight strengthening amid a 2026 statutory review"
+   ]
+  },
+  {
+   "name": "River red gum forest health and floodplain vegetation decline",
+   "importance": 4,
+   "uncertainty": 3,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Climate change and hydrological disruption",
+    "Biodiversity loss and invasive species spread"
+   ],
+   "trends": [
+    "River red gum forests under sustained drought stress despite environmental watering"
+   ]
+  },
+  {
+   "name": "Blue-green algae and drinking-water safety in Basin towns",
+   "importance": 4,
+   "uncertainty": 3,
+   "quadrant": "Action Priority",
+   "megatrends": [
+    "Climate change and hydrological disruption"
+   ],
+   "trends": [
+    "Recurring blue-green algae threatening Basin town drinking-water supply"
+   ]
+  },
+  {
+   "name": "International river-basin and water-crisis lessons for the Basin",
+   "importance": 3,
+   "uncertainty": 3,
+   "quadrant": "Unclassified",
+   "megatrends": [
+    "Climate change and hydrological disruption",
+    "Freshwater scarcity intensifying globally"
+   ],
+   "trends": [
+    "Colorado River overallocation offers a cautionary parallel for Basin water sharing",
+    "Mekong and Nile transboundary basin management offer governance lessons for multi-jurisdictional water sharing",
+    "Netherlands' Room for the River and Israel's desalination crisis offer technical and infrastructure lessons",
+    "Spain's Tagus-Segura conflict and Cape Town's Day Zero offer social and political lessons on water crisis management",
+    "China's South-to-North Water Diversion and Yangtze drought show both the scale and risk of engineered water transfers",
+    "The Indus Waters Treaty ruling and Rhine's shipping-halting drought show water disputes now reach courtrooms and critical infrastructure"
+   ]
+  }
+ ],
  "signals": [
   {
    "id": 1,

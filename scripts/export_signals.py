@@ -12,6 +12,7 @@ What it exports
 Only signals whose RoutingStatus is "Approved": the ones a person has checked.
 For each: title, our summary, link, dates, lenses, kind, horizon, regions,
 geographic scope, sectors, trends, and the source's name, website, voice and tier.
+It also writes the Basin issues and the big forces behind them, so the page can show how they connect.
 The name and description of each trend are exported too.
 
 Every signal should have a place: one or more regions, or a wider scope (Whole of
@@ -39,9 +40,12 @@ from pathlib import Path
 
 NOCODB_URL = os.environ.get("NOCODB_URL", "https://tables.safuturesagency.com.au")
 TABLES = {"signals": "mfvzyv1coptbops", "regions": "mnai6n0qtjk00xh", "sectors": "m55zoinuwpq5dey",
-          "sources": "mp7faeuytgv3h5k", "trends": "mkmk2swxur1wdrh"}
+          "sources": "mp7faeuytgv3h5k", "trends": "mkmk2swxur1wdrh",
+          "issues": "mqe9hbmdg6yoaoe", "megatrends": "m3zuh49nfqxh7ay"}
 # The field on Regions and on Sectors that links back to Signals.
 BACKLINK = {"regions": "cl1kdbjznk1eq2l", "sectors": "ccazbdnbpvxkb3k", "trends": "cq804jq0rl30eel"}
+# The fields on Issues that link to Megatrends and to Trends.
+ISSUE_LINKS = {"Megatrends": "c5qn3oxake07ft1", "LinkedIssues": "c5r5kcbppxgxgoi"}
 OUT = Path(__file__).resolve().parent.parent / "data" / "signals.json"
 
 
@@ -89,15 +93,30 @@ def source_for(url: str, sources: list[dict]) -> dict:
     return best
 
 
+def linked_names(row: dict, field: str, token: str) -> list[str]:
+    """The names an issue is linked to through one of its link fields.
+
+    The list endpoint usually returns the linked rows with their names. Where it
+    returns only a count, the links endpoint is read instead.
+    """
+    value = row.get(field)
+    if isinstance(value, list):
+        return [item.get("Name") or "" for item in value if isinstance(item, dict) and item.get("Name")]
+    if not value:
+        return []
+    path = f"/api/v2/tables/{TABLES['issues']}/links/{ISSUE_LINKS[field]}/records/{row['Id']}"
+    return [item.get("Name") or "" for item in rows(path, token, fields="Id,Name") if item.get("Name")]
+
+
 def published() -> dict | None:
-    """The signals and trends in the file as it stands, or None if it cannot be read.
+    """The signals, trends, issues and big forces in the file as it stands, or None if it cannot be read.
 
     The export compares against this and leaves the file alone when nothing has
     changed, so the site's history shows a change only when the signals change.
     """
     try:
         found = json.loads(OUT.read_text(encoding="utf-8"))
-        return {"signals": found.get("signals"), "trends": found.get("trends")}
+        return {key: found.get(key) for key in ("signals", "trends", "megatrends", "issues")}
     except (OSError, ValueError, AttributeError):
         return None
 
@@ -119,6 +138,14 @@ def main() -> int:
     trends = names_by_signal("trends", token)
     trend_notes = [{"name": row.get("Name") or "", "description": row.get("Description") or ""}
                    for row in rows(f"/api/v2/tables/{TABLES['trends']}/records", token, fields="Name,Description")]
+    # The big forces (megatrends) and the Basin issues they drive. Only names, scores and
+    # links are published. The longer descriptions of issues stay in the base.
+    megatrends = [{"name": row.get("Name") or "", "description": row.get("Description") or ""}
+                  for row in rows(f"/api/v2/tables/{TABLES['megatrends']}/records", token, fields="Name,Description")]
+    issues = [{"name": row.get("Name") or "", "importance": row.get("Importance"), "uncertainty": row.get("Uncertainty"),
+               "quadrant": row.get("Quadrant") or "", "megatrends": linked_names(row, "Megatrends", token),
+               "trends": linked_names(row, "LinkedIssues", token)}
+              for row in rows(f"/api/v2/tables/{TABLES['issues']}/records", token)]
     out = []
     for signal in signals:
         source = source_for(signal.get("URL"), sources)
@@ -137,12 +164,13 @@ def main() -> int:
     if no_place:
         print(f"WARNING: {len(no_place)} approved signals have no place. Their ids: {no_place}. "
               "Set GeographicScope or a region for each one in the Signals table.")
-    if published() == {"signals": out, "trends": trend_notes}:
+    if published() == {"signals": out, "trends": trend_notes, "megatrends": megatrends, "issues": issues}:
         print(f"No change: the same {len(out)} approved signals are already on the site.")
         return 0
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-                               "count": len(out), "trends": trend_notes, "signals": out},
+                               "count": len(out), "trends": trend_notes, "megatrends": megatrends,
+                               "issues": issues, "signals": out},
                               ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"Exported {len(out)} approved signals to {OUT}")
     return 0

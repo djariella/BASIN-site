@@ -65,9 +65,9 @@
   .grid { display:grid; gap:1.25rem; }
   .g-hero { grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); align-items:start; }
   .g-two { grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); align-items:start; margin-top:1.25rem; }
-  @media (max-width:920px) { .g-hero, .g-two { grid-template-columns:1fr; } }
+  @media (max-width:920px) { .g-hero, .g-two { grid-template-columns:minmax(0,1fr); } }
   .panel { background:var(--white); border-radius:14px; padding:1.25rem 1.25rem 1.1rem; }
-  .stack { display:grid; gap:1.25rem; }
+  .stack { display:grid; gap:1.25rem; grid-template-columns:minmax(0,1fr); }
 
   /* every chosen thing looks the same: a hydro ring */
   [aria-pressed="true"] { box-shadow:0 0 0 3px var(--hydro) inset; }
@@ -194,6 +194,40 @@
   footer .cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)); gap:1.5rem 2.5rem; }
   footer h2 { font-size:1.05rem; }
   footer p { margin:.3rem 0 0; color:#dfe7e4; }
+  /* How it connects: big forces on the left, Basin issues on the right, a line for each link. */
+  .sysmap { position:relative; display:grid; grid-template-columns:minmax(0,5fr) minmax(2.5rem,2fr) minmax(0,7fr); margin-top:.5rem; }
+  .sysmap svg { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; }
+  .sysmap path { fill:none; stroke:var(--hydro); stroke-opacity:.17; stroke-width:1.5; transition:stroke-opacity .15s; }
+  .sysmap path.lit { stroke-opacity:.9; stroke-width:2.25; }
+  .sysmap.focus path:not(.lit) { stroke-opacity:.05; }
+  .sm-col { display:flex; flex-direction:column; gap:.1rem; position:relative; z-index:1; min-width:0; }
+  .sm-col.forces { grid-column:1; justify-content:space-around; }
+  .sm-col.issues { grid-column:3; }
+  .sm-head { font-size:.85rem; color:var(--soft); margin:.9rem 0 .15rem; line-height:1.35; background:var(--white); }
+  .sm-head:first-child { margin-top:0; }
+  .sm-head b { color:var(--hydro); font-weight:600; }
+  .node { display:flex; align-items:center; gap:.5rem; border:0; background:none; padding:.1rem .4rem; border-radius:.6rem; text-align:left; min-height:2.05rem; width:100%; transition:opacity .15s; }
+  .forces .node { flex-direction:row-reverse; text-align:right; }
+  .node em { flex:none; width:32px; height:32px; display:grid; place-items:center; }
+  .node i { display:block; border-radius:50%; background:var(--lilac); box-shadow:0 0 0 2px var(--white); }
+  .node span { flex:0 1 auto; min-width:0; font-size:.93rem; line-height:1.25; }
+  .node b { font-weight:600; font-size:.85rem; color:var(--soft); font-variant-numeric:tabular-nums; }
+  .node.act i { background:var(--teal); }
+  .node.watch i { background:var(--white); box-shadow:inset 0 0 0 3px var(--blue), 0 0 0 2px var(--white); }
+  .node.view i { background:#aab3ac; }
+  .node:hover, .node.lit { background:var(--bone); }
+  .node[aria-pressed="true"] { background:var(--hydro); color:var(--white); }
+  .node[aria-pressed="true"] b { color:var(--white); }
+  .node[aria-pressed="true"] i { box-shadow:none; }
+  .node.watch[aria-pressed="true"] i { background:transparent; box-shadow:inset 0 0 0 3px var(--blue); }
+  .sysmap.focus .node:not(.lit):not([aria-pressed="true"]) { opacity:.4; }
+  .sm-cols { display:grid; grid-template-columns:minmax(0,5fr) minmax(2.5rem,2fr) minmax(0,7fr); font-weight:600; font-size:.95rem; margin-top:.25rem; }
+  .sm-cols span:first-child { text-align:right; padding-right:.4rem; } .sm-cols span:last-child { grid-column:3; padding-left:.4rem; }
+  @media (max-width:640px) {
+    .sysmap, .sm-cols { grid-template-columns:minmax(0,5fr) 1rem minmax(0,6fr); }
+    .node { gap:.25rem; padding:.15rem .1rem; } .node span { font-size:.82rem; } .node em { width:22px; } .node b { display:none; }
+  }
+  @media (prefers-reduced-motion:reduce) { .sysmap path, .node { transition:none; } }
 </style>
 </head>
 <body>
@@ -216,6 +250,12 @@
     <p class="hint">Each bubble is a pattern that several signals point to. Bigger means more signals. Choose one to see them.</p>
     <div class="bubbles" id="trend"></div>
     <button class="plain" id="trendMore" type="button" hidden></button>
+  </section>
+  <section class="panel" id="connect" aria-labelledby="h-connect" style="margin-bottom:1.25rem" hidden>
+    <h2 id="h-connect">How it connects</h2>
+    <p class="hint">Big forces at work around the world are driving the issues the Basin is dealing with. Each line links a force to an issue, and a bigger dot means more signals. Choose any one to see what it links to and the signals behind it.</p>
+    <div class="sm-cols" aria-hidden="true"><span>Big forces</span><span>Basin issues</span></div>
+    <div class="sysmap" id="sysmap"></div>
   </section>
   <div class="grid g-hero">
     <section class="panel" aria-labelledby="h-place">
@@ -287,6 +327,7 @@
 "use strict";
 const PAGE = 30;
 let all = [], shown = PAGE, trendNotes = new Map(), allTrends = false, panel = false;
+let issues = [], forces = [], forceNotes = new Map();   // the Basin issues and the big forces behind them
 const $ = id => document.getElementById(id);
 
 /* Build an element with text. Data never reaches the page as HTML. */
@@ -338,6 +379,8 @@ const DIMS = {
   kind:    { label: "Kind",    of: s => s.valence ? [s.valence] : [] },
   horizon: { label: "Horizon", of: s => s.horizon || [] },
   trend:   { label: "Trend",   of: s => s.trends || [] },
+  issue:   { label: "Issue",   of: s => s.issues || [] },
+  force:   { label: "Big force", of: s => s.forces || [] },
   sector:  { label: "Sector",  of: s => s.sectors || [] },
   source:  { label: "Source",  of: s => s.source ? [s.source] : [] },
 };
@@ -351,7 +394,7 @@ function matches(s, skip) {
     if (state[d] && !DIMS[d].of(s).includes(state[d])) return false;
   }
   if (state.q) {
-    const hay = [s.title, s.summary, s.relevance, s.source, ...(s.trends || []), ...(s.sectors || [])].join(" ").toLowerCase();
+    const hay = [s.title, s.summary, s.relevance, s.source, ...(s.trends || []), ...(s.issues || []), ...(s.sectors || [])].join(" ").toLowerCase();
     if (!hay.includes(state.q.toLowerCase())) return false;
   }
   return true;
@@ -457,6 +500,88 @@ function drawBubbles(box, limit) {
   }));
   return names.length;
 }
+/* ---- how it connects: big forces on the left, Basin issues on the right ---- */
+const GROUPS = [   // how an issue is classed in the database, how it is drawn, and how it is described
+  ["Action Priority", "act", "Action priorities", "a lot is at stake and the direction is fairly clear", "An action priority"],
+  ["Critical Uncertainty", "watch", "Critical uncertainties", "a lot is at stake and it could go either way", "A critical uncertainty"],
+  ["", "view", "Also in view", "worth keeping an eye on", "Also in view"]];
+const groupOf = x => GROUPS.find(g => g[0] === x.quadrant) || GROUPS[2];
+const SHORT_ISSUE = [[/trust breakdown/i, "Trust in the Basin Plan"], [/buybacks/i, "Water buybacks and towns"], [/First Nations water/i, "First Nations water rights"],
+  [/fish kills/i, "Fish deaths and algal events"], [/Fuel and energy/i, "Fuel and energy costs"], [/Water market/i, "Water market prices"],
+  [/water scarcity/i, "Less water in a hotter climate"], [/Regional economic decline/i, "Town economies"], [/technology adoption/i, "Water technology gap"],
+  [/Dairy/i, "Dairy and irrigated farming"], [/Avian influenza/i, "Bird flu in wetlands"], [/carp/i, "Carp control"], [/Flood risk/i, "Floods and salinity"],
+  [/mental health/i, "Rural mental health"], [/floodplain harvesting/i, "Floodplain harvesting rules"], [/transmission/i, "Power lines through farmland"],
+  [/Independent oversight/i, "Compliance oversight"], [/red gum/i, "River red gums"], [/Blue-green/i, "Blue-green algae"], [/International/i, "Lessons from overseas"]];
+const SHORT_FORCE = [[/Climate change/i, "A changing climate"], [/Freshwater scarcity/i, "Freshwater scarcity"], [/energy price/i, "Energy price shocks"],
+  [/trust decline/i, "Falling trust in institutions"], [/Digitalisation/i, "Digital tools and AI"], [/Indigenous rights/i, "Indigenous rights recognition"],
+  [/population decline/i, "Regional population decline"], [/cost-of-production/i, "Rising farm costs"], [/Zoonotic/i, "Disease and biosecurity"],
+  [/Biodiversity/i, "Biodiversity loss"], [/mental health/i, "Mental health burden"], [/energy transition/i, "The energy transition"]];
+function shortOf(list, name) { for (const [test, text] of list) if (test.test(name)) return text; return name.split(" ").slice(0, 4).join(" "); }
+const SVG = "http://www.w3.org/2000/svg";
+function drawSysmap() {
+  const box = $("sysmap");
+  $("connect").hidden = !issues.length;
+  if (!issues.length) return;
+  const ci = counts("issue", ["issue", "force"]), cf = counts("force", ["issue", "force"]);
+  const top = Math.max(1, ...ci.values(), ...cf.values()), size = n => n ? Math.round(9 + 21 * Math.sqrt(n / top)) : 6;
+  const node = (dim, other, name, cls, text) => {
+    const n = (dim === "issue" ? ci : cf).get(name) || 0, b = el("button", "node " + cls); b.type = "button";
+    b.dataset.dim = dim; b.dataset.name = name; b.setAttribute("aria-pressed", state[dim] === name);
+    b.title = name + ": " + n + (n === 1 ? " signal" : " signals");
+    const slot = el("em"), dot = el("i"); dot.style.width = dot.style.height = size(n) + "px"; slot.appendChild(dot);
+    b.append(slot, el("span", "", text), el("b", "", n));
+    b.addEventListener("click", () => choose({ [dim]: state[dim] === name ? "" : name, [other]: "" }));
+    for (const on of ["mouseenter", "focus"]) b.addEventListener(on, () => light(dim, name));
+    for (const off of ["mouseleave", "blur"]) b.addEventListener(off, () => light());
+    return b;
+  };
+  const right = el("div", "sm-col issues"), order = [];
+  for (const g of GROUPS) {
+    const mine = issues.filter(x => groupOf(x) === g);
+    if (!mine.length) continue;
+    const head = el("p", "sm-head"); head.append(el("b", "", g[2]), ": " + g[3]); right.appendChild(head);
+    for (const x of mine) { order.push(x.name); right.appendChild(node("issue", "force", x.name, g[1], shortOf(SHORT_ISSUE, x.name))); }
+  }
+  /* Put each force level with the issues it drives, so the lines cross as little as possible. */
+  const level = f => { const at = issues.filter(x => x.megatrends.includes(f.name)).map(x => order.indexOf(x.name)); return at.length ? at.reduce((a, b) => a + b, 0) / at.length : 99; };
+  const left = el("div", "sm-col forces");
+  for (const f of forces.slice().sort((a, b) => level(a) - level(b))) left.appendChild(node("force", "issue", f.name, "force", shortOf(SHORT_FORCE, f.name)));
+  const svg = document.createElementNS(SVG, "svg"); svg.setAttribute("aria-hidden", "true");
+  box.replaceChildren(svg, left, right);
+  drawLinks(); light();
+}
+function drawLinks() {
+  const box = $("sysmap"), svg = box.querySelector && box.querySelector("svg");
+  if (!svg || !box.getBoundingClientRect) return;
+  const frame = box.getBoundingClientRect(), at = new Map();
+  for (const b of box.querySelectorAll(".node")) {
+    const r = b.querySelector("em").getBoundingClientRect();
+    at.set(b.dataset.dim + "|" + b.dataset.name, [r.left + r.width / 2 - frame.left, r.top + r.height / 2 - frame.top]);
+  }
+  const lines = [];
+  for (const x of issues) for (const f of x.megatrends) {
+    const a = at.get("force|" + f), b = at.get("issue|" + x.name);
+    if (!a || !b) continue;
+    const p = document.createElementNS(SVG, "path"), mid = (a[0] + b[0]) / 2;
+    p.setAttribute("d", "M" + a[0] + " " + a[1] + "C" + mid + " " + a[1] + " " + mid + " " + b[1] + " " + b[0] + " " + b[1]);
+    p.dataset.force = f; p.dataset.issue = x.name; lines.push(p);
+  }
+  svg.replaceChildren(...lines);
+}
+/* Light up one force or issue and everything it links to. With no argument, light up whatever is chosen. */
+function light(dim, name) {
+  const box = $("sysmap");
+  if (!box.querySelectorAll) return;
+  if (!dim) { dim = state.issue ? "issue" : state.force ? "force" : ""; name = dim ? state[dim] : ""; }
+  const linked = new Set(dim ? [dim + "|" + name] : []);
+  for (const x of issues) {
+    if (dim === "issue" && x.name === name) for (const f of x.megatrends) linked.add("force|" + f);
+    if (dim === "force" && x.megatrends.includes(name)) linked.add("issue|" + x.name);
+  }
+  box.classList.toggle("focus", !!dim);
+  for (const b of box.querySelectorAll(".node")) b.classList.toggle("lit", linked.has(b.dataset.dim + "|" + b.dataset.name));
+  for (const p of box.querySelectorAll("path")) p.classList.toggle("lit", !!dim && p.dataset[dim] === name);
+}
 function drawChips(id, dim, cls) {
   const c = counts(dim), names = [...c.keys()].sort((a, b) => c.get(b) - c.get(a));
   $(id).replaceChildren(...names.map(name => label(pick(dim, name, "chip " + cls, trendNotes.get(name) || ""), name, c.get(name))));
@@ -525,7 +650,24 @@ function drawSelection(box) {
   top.append(shut, el("p", "", hits.length + (hits.length === 1 ? " signal" : " signals")), h);
   const body = el("div", "d-body");
   if (state.trend && trendNotes.get(state.trend)) body.append(el("p", "", trendNotes.get(state.trend)));
-  if (!state.trend && hits.length > 1) { const wrap = el("div", "bubbles"); if (drawBubbles(wrap, 5)) body.append(el("h3", "", "What these signals are about"), wrap); }
+  const hop = (title, names, dim, other) => {   // links from this panel to the things it connects to
+    if (!names.length) return;
+    const row = el("div", "chips");
+    for (const name of names) { const b = el("button", "chip " + (dim === "trend" ? "trend" : ""), name); b.type = "button"; b.addEventListener("click", () => choose({ [dim]: name, [other]: "" })); row.appendChild(b); }
+    body.append(el("h3", "", title), row);
+  };
+  const issue = issues.find(x => x.name === state.issue);
+  if (issue) {
+    const g = groupOf(issue), scored = issue.importance && issue.uncertainty;
+    body.append(el("p", "", g[4] + ": " + g[3] + "." + (scored ? " In the database it is scored " + issue.importance + " out of 5 for how much is at stake and " + issue.uncertainty + " out of 5 for how uncertain it is." : "")));
+    hop("The big forces behind it", issue.megatrends, "force", "issue");
+    hop(issue.trends.length === 1 ? "The pattern feeding it" : "The patterns feeding it", issue.trends, "trend", "issue");
+  }
+  if (state.force) {
+    if (forceNotes.get(state.force)) body.append(el("p", "", forceNotes.get(state.force)));
+    hop("The Basin issues it is driving", issues.filter(x => x.megatrends.includes(state.force)).map(x => x.name), "issue", "force");
+  }
+  if (!state.trend && !state.issue && hits.length > 1) { const wrap = el("div", "bubbles"); if (drawBubbles(wrap, 5)) body.append(el("h3", "", "What these signals are about"), wrap); }
   body.append(el("h3", "", hits.length ? "The signals" : "Nothing has been collected here yet"));
   if (!hits.length) body.append(el("p", "", "That is a finding in itself: a gap in what the scan has noticed."));
   const list = el("ul", "related");
@@ -561,6 +703,7 @@ function drawDetail() {
   const tags = tagRow(s, () => { state.signal = null; });
   for (const k of s.horizon || []) tags.add("horizon", k, "", HORIZONS[k] || k);
   for (const t of s.trends || []) tags.add("trend", t, "trend");
+  for (const t of s.issues || []) tags.add("issue", t, "");
   for (const t of s.sectors || []) tags.add("sector", t, "");
   if (s.voice) tags.add("voice", s.voice, "");
   body.appendChild(tags.row);
@@ -606,12 +749,22 @@ function update() {
   drawPlace(); drawBars("lens", "lens", LENSES); drawBars("voice", "voice"); drawKinds(); drawHeat();
   const trends = drawBubbles($("trend"), allTrends ? 99 : 10); drawChips("sector", "sector", "");
   $("themes").hidden = !trends; $("trendMore").hidden = trends <= 10; $("trendMore").textContent = allTrends ? "Show fewer" : "Show all " + trends + " patterns";
-  drawList(); drawSources(); drawDetail(); writeAddress();
+  drawSysmap(); drawList(); drawSources(); drawDetail(); writeAddress();
 }
 
 fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data => {
   all = (data.signals || []).sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
   trendNotes = new Map((data.trends || []).map(t => [t.name, t.description || ""]));
+  forces = data.megatrends || []; forceNotes = new Map(forces.map(f => [f.name, f.description || ""]));
+  issues = (data.issues || []).map(x => ({ ...x, megatrends: x.megatrends || [], trends: x.trends || [] }));
+  const feeds = new Map();   // pattern name: the issues it feeds
+  for (const x of issues) for (const t of x.trends) feeds.set(t, [...(feeds.get(t) || []), x]);
+  for (const s of all) {
+    const mine = [...new Set((s.trends || []).flatMap(t => feeds.get(t) || []))];
+    s.issues = mine.map(x => x.name); s.forces = [...new Set(mine.flatMap(x => x.megatrends))];
+  }
+  for (const x of issues) x.total = all.filter(s => s.issues.includes(x.name)).length;
+  issues.sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));   // a steady order, biggest first
   const sources = new Set(all.map(s => s.source).filter(Boolean)).size;
   const lede = $("lede"); lede.replaceChildren();
   lede.append("BASIN brings together what is changing across the Murray‑Darling Basin: ", el("b", "", all.length + " signals"), " so far, from ", el("b", "", sources + " public sources"),
@@ -629,6 +782,9 @@ $("trendMore").addEventListener("click", () => { allTrends = !allTrends; update(
 $("detail").addEventListener("close", () => { if (state.signal || panel) { panel = false; choose({ signal: null }); } });
 $("detail").addEventListener("click", e => { if (e.target === $("detail")) $("detail").close(); });
 window.addEventListener("hashchange", () => { readAddress(); update(); });
+const redraw = () => { drawLinks(); light(); };
+if (window.ResizeObserver) new ResizeObserver(redraw).observe($("sysmap")); else window.addEventListener("resize", redraw);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
 </script>
 </body>
 </html>

@@ -129,6 +129,16 @@
   .heat tr.gap th, .heat tr.gap td { padding-top:8px; }
   @media (max-width:560px) { .heat button { font-size:.8rem; } .heat th:first-child { width:38%; } }
 
+  /* ---------- bubbles: one per pattern, sized by its signals ---------- */
+  .bubbles { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  .bubble { border:0; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+            padding:.5rem; line-height:1.15; font-size:.875rem; font-weight:500; color:var(--hydro); }
+  .bubble b { font-weight:300; font-size:1.5rem; line-height:1.1; }
+  .bubble:hover { filter:brightness(.96); }
+  details.closer { margin-top:1.25rem; }
+  details.closer > summary { background:var(--white); border-radius:14px; padding:1rem 1.25rem; list-style-position:inside; }
+  .related small { display:block; color:var(--soft); font-size:.85rem; font-weight:400; }
+  .related span { font-weight:500; }
   /* ---------- chips ---------- */
   .chips { display:flex; flex-wrap:wrap; gap:6px; }
   .chip { border:0; border-radius:999px; padding:.3rem .7rem; font-size:.9rem; background:var(--bone); text-align:left; }
@@ -201,6 +211,12 @@
 </header>
 
 <main><div class="wrap">
+  <section class="panel" id="themes" aria-labelledby="h-themes" style="margin-bottom:1.25rem">
+    <h2 id="h-themes">What is coming up</h2>
+    <p class="hint">Each bubble is a pattern that several signals point to. Bigger means more signals. Choose one to see them.</p>
+    <div class="bubbles" id="trend"></div>
+    <button class="plain" id="trendMore" type="button" hidden></button>
+  </section>
   <div class="grid g-hero">
     <section class="panel" aria-labelledby="h-place">
       <h2 id="h-place">Where it is happening</h2>
@@ -222,6 +238,7 @@
     </div>
   </div>
 
+  <details class="closer"><summary>Look closer: who is saying it, where the gaps are, and by industry</summary>
   <div class="grid g-two">
     <section class="panel" aria-labelledby="h-voice">
       <h2 id="h-voice">Who is saying it</h2>
@@ -235,13 +252,11 @@
     </section>
   </div>
 
-  <section class="panel" style="margin-top:1.25rem" aria-labelledby="h-thread" id="threads" hidden>
-    <h2 id="h-thread">The bigger patterns</h2>
-    <p class="hint">Trends that several signals point to, and the industries they touch.</p>
-    <h3 id="h-trend">Trends</h3><div class="bars trends" id="trend"></div>
-    <button class="plain" id="trendMore" type="button" hidden></button>
-    <h3 style="margin-top:1rem">Sectors</h3><div class="chips" id="sector"></div>
+  <section class="panel" style="margin-top:1.25rem" aria-labelledby="h-thread">
+    <h2 id="h-thread">By industry</h2>
+    <div class="chips" id="sector"></div>
   </section>
+  </details>
 
   <section id="signals" aria-labelledby="h-list">
     <h2 id="h-list">What we have found</h2>
@@ -271,7 +286,7 @@
 <script>
 "use strict";
 const PAGE = 30;
-let all = [], shown = PAGE, trendNotes = new Map(), allTrends = false;
+let all = [], shown = PAGE, trendNotes = new Map(), allTrends = false, panel = false;
 const $ = id => document.getElementById(id);
 
 /* Build an element with text. Data never reaches the page as HTML. */
@@ -351,6 +366,7 @@ function counts(dim, skip) {
 const shade = (n, top) => n ? "c" + Math.max(1, Math.ceil(4 * n / Math.max(top, 1))) : "c0";
 function choose(changes) {
   if (Object.keys(changes).some(key => key !== "signal")) shown = PAGE;   // opening one signal keeps your place in the list
+  if (Object.keys(changes).some(key => key in DIMS && changes[key])) panel = true;   // every choice opens its results beside you
   Object.assign(state, changes); update();
 }
 function pick(dim, value, cls, title) {
@@ -422,6 +438,25 @@ function drawHeat() {
   });
   const thead = el("thead"); thead.appendChild(head); $("heat").replaceChildren(thead, body);
 }
+/* Short names for the bubbles. The full name shows on hover and in the panel. */
+const SHORT = [[/scarcity/i, "Water scarcity"], [/trust gap/i, "Trust and the Basin Plan review"], [/remote-sensing|blockchain/i, "Water technology"],
+  [/buyback.*backlash/i, "Buyback backlash"], [/fish deaths/i, "Fish deaths and algae"], [/First Nations water rights/i, "First Nations water rights"],
+  [/Tagus/i, "Lessons from Spain and Cape Town"], [/Room for the River/i, "Lessons from the Netherlands and Israel"], [/carp/i, "Carp control"],
+  [/Mekong/i, "Lessons from the Mekong and Nile"], [/H5N1/i, "Bird flu in wetlands"], [/Colorado/i, "Lessons from the Colorado"],
+  [/Indus/i, "Lessons from the Indus and Rhine"], [/fuel and input/i, "Fuel and input costs"], [/cuts both ways/i, "Climate risk, both ways"],
+  [/price volatility/i, "Water market prices"], [/South-to-North/i, "Lessons from China"], [/compliance oversight/i, "Compliance oversight"],
+  [/mental health/i, "Rural mental health"], [/floodplain harvesting/i, "Floodplain harvesting"], [/red gum/i, "River red gums"],
+  [/blue-green/i, "Blue-green algae"], [/transmission/i, "Transmission build-out"], [/tourism/i, "River tourism"]];
+function shortName(name) { for (const [test, text] of SHORT) if (test.test(name)) return text; return name.split(" ").slice(0, 4).join(" "); }
+function drawBubbles(box, limit) {
+  const c = counts("trend"), names = [...c.keys()].sort((a, b) => c.get(b) - c.get(a)), top = Math.max(1, ...c.values());
+  box.replaceChildren(...names.filter((name, i) => i < limit || state.trend === name).map(name => {
+    const n = c.get(name), b = pick("trend", name, "bubble " + shade(n, top), name);
+    b.style.width = b.style.height = Math.min(230, Math.round(84 + 25 * Math.sqrt(n))) + "px";
+    b.append(el("span", "", shortName(name)), el("b", "", n)); return b;
+  }));
+  return names.length;
+}
 function drawChips(id, dim, cls) {
   const c = counts(dim), names = [...c.keys()].sort((a, b) => c.get(b) - c.get(a));
   $(id).replaceChildren(...names.map(name => label(pick(dim, name, "chip " + cls, trendNotes.get(name) || ""), name, c.get(name))));
@@ -433,7 +468,7 @@ function tagRow(s, onChoose) {
   const row = el("div", "chips");
   const add = (dim, value, cls, text) => {
     const b = el("button", "chip " + cls, text || value); b.type = "button"; b.title = DIMS[dim].label + ": " + value;
-    b.addEventListener("click", () => { if (onChoose) onChoose(); choose({ [dim]: value }); $("signals").scrollIntoView(); });
+    b.addEventListener("click", () => { if (onChoose) onChoose(); choose({ [dim]: value }); });
     row.appendChild(b);
   };
   for (const p of places(s)) add("place", p, "place", REGIONS[p] ? REGIONS[p][0] : p);
@@ -479,20 +514,48 @@ function related(s) {
   return all.filter(o => o.id !== s.id).map(o => [o, 3 * share(s.trends, o.trends) + 2 * share(s.sectors, o.sectors) + share(places(s), places(o)) + share(s.steep, o.steep) + (o.source && o.source === s.source ? 1 : 0)])
     .filter(pair => pair[1] >= 3).sort((a, b) => b[1] - a[1] || String(b[0].published).localeCompare(String(a[0].published))).slice(0, 5).map(pair => pair[0]);
 }
+const chosenDims = () => Object.keys(DIMS).filter(d => state[d]);
+const niceValue = v => REGIONS[v] ? REGIONS[v][0] : HORIZONS[v] || v;
+/* What a choice shows, straight away and beside you: how many signals, what they are about, and the signals. */
+function drawSelection(box) {
+  const hits = all.filter(s => matches(s)), dims = chosenDims();
+  const top = el("div", "d-top"), shut = el("button", "", "Close"); shut.type = "button";
+  shut.addEventListener("click", () => { panel = false; update(); });
+  const h = el("h2", "", dims.map(d => niceValue(state[d])).join(" and ")); h.id = "d-title";
+  top.append(shut, el("p", "", hits.length + (hits.length === 1 ? " signal" : " signals")), h);
+  const body = el("div", "d-body");
+  if (state.trend && trendNotes.get(state.trend)) body.append(el("p", "", trendNotes.get(state.trend)));
+  if (!state.trend && hits.length > 1) { const wrap = el("div", "bubbles"); if (drawBubbles(wrap, 5)) body.append(el("h3", "", "What these signals are about"), wrap); }
+  body.append(el("h3", "", hits.length ? "The signals" : "Nothing has been collected here yet"));
+  if (!hits.length) body.append(el("p", "", "That is a finding in itself: a gap in what the scan has noticed."));
+  const list = el("ul", "related");
+  for (const s of hits.slice(0, 80)) {
+    const li = el("li"), b = el("button"); b.type = "button";
+    b.append(el("span", "", s.title), el("small", "", [s.source, niceDate(s.published)].filter(Boolean).join(", ")));
+    b.addEventListener("click", () => choose({ signal: s.id })); li.appendChild(b); list.appendChild(li);
+  }
+  body.appendChild(list);
+  const acts = el("div", "actions"), clear = el("button", "cta quiet", "Clear this choice"); clear.type = "button";
+  clear.addEventListener("click", () => { const none = {}; for (const d of dims) none[d] = ""; panel = false; choose(none); });
+  acts.appendChild(clear); body.appendChild(acts);
+  box.replaceChildren(top, body); if (!box.open) box.showModal(); box.scrollTop = 0;
+}
 function drawDetail() {
   const box = $("detail"), s = all.find(x => x.id === state.signal);
-  if (!s) { if (box.open) box.close(); return; }
-  const close = () => choose({ signal: null });
+  if (!s) { if (panel && chosenDims().length) return drawSelection(box); panel = false; if (box.open) box.close(); return; }
+  const close = () => { panel = false; choose({ signal: null }); };
   const top = el("div", "d-top"), shut = el("button", "", "Close"); shut.type = "button"; shut.addEventListener("click", close);
   const h = el("h2", "", s.title); h.id = "d-title";
-  top.append(shut, el("p", "", [s.valence, (s.horizon || []).map(k => HORIZONS[k] || k).join(", ")].filter(Boolean).join(", ")), h);
+  top.appendChild(shut);
+  if (panel && chosenDims().length) { const back = el("button", "", "Back to the list"); back.type = "button"; back.addEventListener("click", () => choose({ signal: null })); top.appendChild(back); }
+  top.append(el("p", "", [s.valence, (s.horizon || []).map(k => HORIZONS[k] || k).join(", ")].filter(Boolean).join(", ")), h);
   const body = el("div", "d-body");
   body.append(el("p", "small", [s.source, niceDate(s.published, true)].filter(Boolean).join(", ")));
   body.append(el("h3", "", "What it says"), el("p", "", s.summary));
   if (s.relevance) body.append(el("h3", "", "Why it matters for the Basin"), el("p", "", s.relevance));
   const acts = el("div", "actions"), url = safeLink(s.url);
   if (url) { const a = el("a", "cta", "Read the original"); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; acts.appendChild(a); }
-  if (s.source) { const b = el("button", "cta quiet", "More from this source"); b.type = "button"; b.addEventListener("click", () => { choose({ signal: null, source: s.source }); $("signals").scrollIntoView(); }); acts.appendChild(b); }
+  if (s.source) { const b = el("button", "cta quiet", "More from this source"); b.type = "button"; b.addEventListener("click", () => choose({ signal: null, source: s.source })); acts.appendChild(b); }
   body.appendChild(acts);
   body.append(el("h3", "", "Follow its threads"));
   const tags = tagRow(s, () => { state.signal = null; });
@@ -519,7 +582,6 @@ function drawSources() {
   $("sourcesTitle").textContent = "The sources (" + names.length + ")";
   $("sources").replaceChildren(...names.map(name => {
     const row = el("div", "src"), b = pick("source", name, ""); b.append(el("span", "", name), el("b", "", c.get(name)));
-    b.addEventListener("click", () => $("signals").scrollIntoView());
     row.appendChild(b);
     if (domain.get(name)) { const a = el("a", "", "website"); a.href = "https://" + domain.get(name); a.target = "_blank"; a.rel = "noopener noreferrer"; a.setAttribute("aria-label", name + " website"); row.appendChild(a); }
     return row;
@@ -542,9 +604,8 @@ function readAddress() {
 }
 function update() {
   drawPlace(); drawBars("lens", "lens", LENSES); drawBars("voice", "voice"); drawKinds(); drawHeat();
-  const trends = drawBars("trend", "trend", null, allTrends ? 99 : 8), threads = trends + drawChips("sector", "sector", "");
-  $("threads").hidden = !threads; $("h-trend").hidden = $("trend").hidden = !trends;
-  $("trendMore").hidden = trends <= 8; $("trendMore").textContent = allTrends ? "Show fewer trends" : "Show all " + trends + " trends";
+  const trends = drawBubbles($("trend"), allTrends ? 99 : 10); drawChips("sector", "sector", "");
+  $("themes").hidden = !trends; $("trendMore").hidden = trends <= 10; $("trendMore").textContent = allTrends ? "Show fewer" : "Show all " + trends + " patterns";
   drawList(); drawSources(); drawDetail(); writeAddress();
 }
 
@@ -565,7 +626,7 @@ fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data 
 $("q").addEventListener("input", () => choose({ q: $("q").value.trim() }));
 $("more").addEventListener("click", () => { shown += PAGE; drawList(); });
 $("trendMore").addEventListener("click", () => { allTrends = !allTrends; update(); });
-$("detail").addEventListener("close", () => { if (state.signal) choose({ signal: null }); });
+$("detail").addEventListener("close", () => { if (state.signal || panel) { panel = false; choose({ signal: null }); } });
 $("detail").addEventListener("click", e => { if (e.target === $("detail")) $("detail").close(); });
 window.addEventListener("hashchange", () => { readAddress(); update(); });
 </script>

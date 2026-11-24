@@ -95,6 +95,9 @@
   .bar:hover { background:var(--bone); }
   .bar i { display:block; height:14px; border-radius:4px; background:var(--teal); min-width:3px; }
   .bars.voices .bar i { background:var(--blue); }
+  #lens .bar { grid-template-columns:8rem 1fr 2.6rem; }
+  .bars.trends .bar { grid-template-columns:minmax(0,1fr) minmax(4rem,9rem) 2.6rem; }
+  .bars.trends .bar i { background:var(--lilac); }
   .bar b { font-weight:500; text-align:right; font-variant-numeric:tabular-nums; }
   .bar span { font-size:.95rem; line-height:1.25; }
 
@@ -119,7 +122,9 @@
   .heat button { width:100%; border:0; background:none; border-radius:7px; padding:.4rem .3rem; text-align:left; font-size:.875rem; line-height:1.2; }
   .heat td { padding:0; }
   .heat td button { text-align:center; font-weight:500; font-variant-numeric:tabular-nums; min-height:2.1rem; }
-  .heat thead button { hyphens:auto; }
+  .heat thead button { hyphens:manual; }
+  .heat td button.c1 { background:var(--r1); } .heat td button.c2 { background:var(--r2); }
+  .heat td button.c3 { background:var(--r3); } .heat td button.c4 { background:var(--r4); }
   .heat tr.gap th, .heat tr.gap td { padding-top:8px; }
   @media (max-width:560px) { .heat button { font-size:.8rem; } .heat th:first-child { width:38%; } }
 
@@ -230,7 +235,8 @@
   <section class="panel" style="margin-top:1.25rem" aria-labelledby="h-thread" id="threads" hidden>
     <h2 id="h-thread">Follow a thread</h2>
     <p class="hint">Trends and sectors that run through the signals.</p>
-    <h3 id="h-trend">Trends</h3><div class="chips" id="trend"></div>
+    <h3 id="h-trend">Trends</h3><div class="bars trends" id="trend"></div>
+    <button class="plain" id="trendMore" type="button" hidden></button>
     <h3 style="margin-top:1rem">Sectors</h3><div class="chips" id="sector"></div>
   </section>
 
@@ -262,7 +268,7 @@
 <script>
 "use strict";
 const PAGE = 30;
-let all = [], shown = PAGE, trendNotes = new Map();
+let all = [], shown = PAGE, trendNotes = new Map(), allTrends = false;
 const $ = id => document.getElementById(id);
 
 /* Build an element with text. Data never reaches the page as HTML. */
@@ -291,6 +297,7 @@ const REGIONS = {   // database name: [label on the diagram, position in the dia
 };
 const LENSES = ["Social", "Technological", "Economic", "Environmental", "Political", "Values"];
 const KINDS = ["Bright Spot", "Blind Spot", "Critical Uncertainty", "Action Priority"];
+const LENS_SPLIT = { "Technological": "Techno\u00ADlogical", "Environmental": "Environ\u00ADmental" };   // where a long heading may break
 const HORIZONS = { "Now": "Now", "+5yr": "In 5 years", "+10yr": "In 10 years", "+20yr": "In 20 years" };
 const GLYPH = {     // fixed drawings, written here, never taken from the data
   "Bright Spot": '<circle cx="14" cy="14" r="5"/><path d="M14 3v3M14 22v3M3 14h3M22 14h3M6.2 6.2l2.1 2.1M19.7 19.7l2.1 2.1M6.2 21.8l2.1-2.1M19.7 8.3l2.1-2.1"/>',
@@ -369,13 +376,15 @@ function drawPlace() {
   $("place").replaceChildren(inner);
   if (c.get(NO_PLACE)) $("place").appendChild(label(pick("place", NO_PLACE, "chip"), NO_PLACE, c.get(NO_PLACE)));
 }
-function drawBars(id, dim, order) {
+function drawBars(id, dim, order, limit) {
   const c = counts(dim), names = order || [...c.keys()].sort((a, b) => c.get(b) - c.get(a)), top = Math.max(1, ...c.values());
-  $(id).replaceChildren(...names.map(name => {
-    const n = c.get(name) || 0, b = pick(dim, name, "bar", name + ": " + n + " signals"), track = el("div"), fill = el("i");
+  const visible = limit ? names.filter((name, i) => i < limit || state[dim] === name) : names;
+  $(id).replaceChildren(...visible.map(name => {
+    const n = c.get(name) || 0, b = pick(dim, name, "bar", trendNotes.get(name) || name + ": " + n + " signals"), track = el("div"), fill = el("i");
     fill.style.width = (100 * n / top) + "%"; if (!n) fill.style.background = "transparent";
     track.appendChild(fill); b.append(el("span", "", name), track, el("b", "", n)); return b;
   }));
+  return names.length;
 }
 function drawKinds() {
   const c = counts("kind");
@@ -394,7 +403,7 @@ function drawHeat() {
   for (const s of all) if (matches(s, ["place", "lens"]))
     for (const p of places(s)) for (const l of s.steep || []) { const k = p + "|" + l, n = (cell.get(k) || 0) + 1; cell.set(k, n); top = Math.max(top, n); }
   const head = el("tr"); head.appendChild(el("th"));
-  for (const l of LENSES) { const th = el("th"); th.scope = "col"; th.appendChild(pick("lens", l, "")).textContent = l; head.appendChild(th); }
+  for (const l of LENSES) { const th = el("th"); th.scope = "col"; th.appendChild(pick("lens", l, "")).textContent = LENS_SPLIT[l] || l; head.appendChild(th); }
   const body = el("tbody");
   [...Object.keys(REGIONS), ...WIDER].forEach((p, i) => {
     const tr = el("tr", i === 6 ? "gap" : ""), th = el("th"); th.scope = "row";
@@ -530,8 +539,9 @@ function readAddress() {
 }
 function update() {
   drawPlace(); drawBars("lens", "lens", LENSES); drawBars("voice", "voice"); drawKinds(); drawHeat();
-  const threads = drawChips("trend", "trend", "trend") + drawChips("sector", "sector", "");
-  $("threads").hidden = !threads; $("h-trend").hidden = $("trend").hidden = !$("trend").children.length;
+  const trends = drawBars("trend", "trend", null, allTrends ? 99 : 8), threads = trends + drawChips("sector", "sector", "");
+  $("threads").hidden = !threads; $("h-trend").hidden = $("trend").hidden = !trends;
+  $("trendMore").hidden = trends <= 8; $("trendMore").textContent = allTrends ? "Show fewer trends" : "Show all " + trends + " trends";
   drawList(); drawSources(); drawDetail(); writeAddress();
 }
 
@@ -551,6 +561,7 @@ fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data 
 
 $("q").addEventListener("input", () => choose({ q: $("q").value.trim() }));
 $("more").addEventListener("click", () => { shown += PAGE; drawList(); });
+$("trendMore").addEventListener("click", () => { allTrends = !allTrends; update(); });
 $("detail").addEventListener("close", () => { if (state.signal) choose({ signal: null }); });
 $("detail").addEventListener("click", e => { if (e.target === $("detail")) $("detail").close(); });
 window.addEventListener("hashchange", () => { readAddress(); update(); });

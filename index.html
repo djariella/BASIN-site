@@ -58,7 +58,7 @@
 <header><div class="wrap">
   <span class="pilot">Pilot, in development</span>
   <h1>BASIN</h1>
-  <p>Signals of change from across the Murray-Darling Basin, gathered from public sources and checked by a person before they appear here. A pilot by the One Basin CRC.</p>
+  <p>Signals of change from across the Murray-Darling Basin, gathered from public sources. A pilot by the One Basin CRC.</p>
 </div></header>
 <main><div class="wrap">
   <div class="stats" id="stats" aria-live="polite"></div>
@@ -158,12 +158,13 @@ fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data 
   all = (data.signals || []).sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
   const regions = tally(all, s => s.regions), lenses = tally(all, s => s.steep), voices = tally(all, s => s.voice);
   fillSelect("region", regions); fillSelect("lens", lenses); fillSelect("voice", voices); fillSelect("valence", tally(all, s => s.valence));
-  const stats = [[all.length, "signals checked by a person"], [regions.length, "Basin regions"],
+  const stats = [[all.length, "signals"], [regions.length, "Basin regions"],
                  [new Set(all.map(s => s.source).filter(Boolean)).size, "sources"], [voices.length, "kinds of voice"]];
   $("stats").replaceChildren(...stats.map(([n, t]) => { const d = el("div", "stat"); d.appendChild(el("b", "", n)); d.appendChild(el("span", "", t)); return d; }));
   bars("byVoice", voices, all.length || 1); bars("byLens", lenses, all.length || 1);
   $("foot").textContent = "Last updated " + (niceDate(data.generated) || "not yet") +
     ". Each entry is a headline, a link and our own short summary. The original belongs to its publisher. " +
+    "Anything the nightly scan finds is held for a person to check before it appears here. " +
     "This is a working prototype and will change.";
   render();
 }).catch(() => { $("count").textContent = "The signals could not be loaded. Please try again shortly."; });

@@ -1,6 +1,8 @@
 # BASIN: the public pilot page
 
-This repository holds one web page and one data file. Together they are the public face of the BASIN pilot: signals of change from across the Murray-Darling Basin, gathered from public sources and checked by a person.
+This repository holds one web page and one data file. Together they are the public face of the BASIN pilot: signals of change from across the Murray-Darling Basin, gathered from public sources.
+
+**The page:** https://djariella.github.io/BASIN-site/
 
 **Everything here is public.** The scan, the source register and the working documents live in a separate private repository.
 
@@ -9,9 +11,9 @@ This repository holds one web page and one data file. Together they are the publ
 | File | What it is |
 |---|---|
 | `index.html` | The page. One self-contained file with no outside code. |
-| `data/signals.json` | The approved signals the page shows. Refreshed from the database every hour. |
+| `data/signals.json` | The approved signals the page shows. Checked against the database every hour and rewritten only when the approved signals change. |
 | `scripts/export_signals.py` | Reads approved signals from the database and writes the data file. |
-| `.github/workflows/update-signals.yml` | Runs the export every hour and saves the file if it changed. |
+| `.github/workflows/update-signals.yml` | Runs the export every hour and saves the file if it changed. It can also be started by hand from the Actions tab. |
 
 ## How it stays current
 
@@ -22,9 +24,19 @@ This repository holds one web page and one data file. Together they are the publ
 
 The page never talks to the database and holds no key. That is deliberate: anything on a public page can be read by anyone.
 
+## Trying a change on your own computer
+
+Browsers will not let a page opened straight from a folder read its data file, so serve the folder first:
+
+```
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000/`. GitHub publishes whatever is on the `main` branch within a minute or two of a change.
+
 ## The one secret
 
-The export needs `NOCODB_TOKEN`, saved under Settings, Secrets and variables, Actions. It is never written into a file.
+The export needs `NOCODB_TOKEN`, saved under Settings, Secrets and variables, Actions. It is never written into a file. Until it exists the hourly job runs, says the token is missing, and changes nothing.
 
 ## Rules
 

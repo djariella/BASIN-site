@@ -11,7 +11,7 @@ This repository holds one web page and one data file. Together they are the publ
 | File | What it is |
 |---|---|
 | `index.html` | The page. Styles and script are inside it. Nothing is loaded from another site. |
-| `assets/` | The Inter typeface (SIL Open Font License) and the One Basin CRC logo. |
+| `assets/` | The Inter typeface (SIL Open Font License) and the One Basin CRC logo files as published on onebasin.com.au. |
 | `data/signals.json` | The approved signals the page shows. Checked against the database every hour and rewritten only when the approved signals change. |
 | `scripts/export_signals.py` | Reads approved signals from the database and writes the data file. |
 | `.github/workflows/update-signals.yml` | Runs the export every hour and saves the file if it changed. It can also be started by hand from the Actions tab. |

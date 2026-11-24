@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>BASIN: early intelligence for decisions across the Murray-Darling Basin</title>
+<title>BASIN: Basin-wide intelligence for better decisions</title>
 <!--
   BASIN pilot explorer.
 
@@ -49,7 +49,7 @@
           border-radius:0 100% 0 100%; transform:rotate(8deg); }
   @media (max-width:1100px) { .leaf { display:none; } }
   .brand { display:flex; align-items:center; gap:1rem; margin-bottom:2.25rem; }
-  .brand img { width:150px; height:auto; display:block; }
+  .brand img { width:150px; height:auto; display:block; margin:.5rem 0; }   /* the official file from onebasin.com.au, unaltered */
   .pilot { border:1px solid rgba(255,255,255,.5); border-radius:999px; padding:.15rem .7rem; font-size:.875rem; }
   h1 { margin:0 0 1rem; max-width:14em; font-weight:300; font-size:clamp(2rem,4.6vw,3.3rem); line-height:1.08; letter-spacing:-.025em;
        color:#fff; }
@@ -191,11 +191,11 @@
   <div class="leaf" aria-hidden="true"></div>
   <div class="wrap">
     <div class="brand">
-      <img src="assets/onebasin-logo-negative.png" alt="One Basin CRC" width="150" height="110">
+      <img src="assets/onebasin-logo-white.svg" alt="One Basin CRC" width="150" height="106">
       <span class="pilot">Pilot, in development</span>
     </div>
     <p class="name"><b>BASIN</b> Basin-wide Anticipatory Sensing and Intelligence Network</p>
-    <h1>Early intelligence for better decisions across the Murray-Darling Basin</h1>
+    <h1>Basin‑wide intelligence for better decisions</h1>
     <p class="lede" id="lede">Loading the signals.</p>
   </div>
 </header>
@@ -553,7 +553,7 @@ fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data 
   trendNotes = new Map((data.trends || []).map(t => [t.name, t.description || ""]));
   const sources = new Set(all.map(s => s.source).filter(Boolean)).size;
   const lede = $("lede"); lede.replaceChildren();
-  lede.append("BASIN brings together what is changing across the Basin: ", el("b", "", all.length + " signals"), " so far, from ", el("b", "", sources + " public sources"),
+  lede.append("BASIN brings together what is changing across the Murray‑Darling Basin: ", el("b", "", all.length + " signals"), " so far, from ", el("b", "", sources + " public sources"),
     ", from local papers to government and research. A signal is one piece of evidence that something is changing. Choose a place, a topic or a voice to see what is being noticed, and what is being missed.");
   const whole = new Map(); for (const s of all) for (const l of s.steep || []) whole.set(l, (whole.get(l) || 0) + 1);
   const thin = LENSES.slice().sort((a, b) => (whole.get(a) || 0) - (whole.get(b) || 0)).slice(0, 2);

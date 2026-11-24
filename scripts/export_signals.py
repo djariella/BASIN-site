@@ -19,6 +19,7 @@ Running it
 
 The token is read from the environment and is never printed or saved.
 If no token is set the script says so and changes nothing.
+If the approved signals are the same as last time, the file is left alone.
 Standard library only. Python 3.8 or later.
 """
 
@@ -84,6 +85,18 @@ def source_for(url: str, sources: list[dict]) -> dict:
     return best
 
 
+def published_signals() -> list | None:
+    """The signals in the file as it stands, or None if it cannot be read.
+
+    The export compares against this and leaves the file alone when nothing has
+    changed, so the site's history shows a change only when the signals change.
+    """
+    try:
+        return json.loads(OUT.read_text(encoding="utf-8")).get("signals")
+    except (OSError, ValueError, AttributeError):
+        return None
+
+
 def as_list(value) -> list[str]:
     return [part.strip() for part in str(value or "").split(",") if part.strip()]
 
@@ -110,6 +123,9 @@ def main() -> int:
             "regions": sorted(regions.get(signal["Id"], [])), "sectors": sorted(sectors.get(signal["Id"], [])),
             "source": source.get("Name") or "", "voice": source.get("Voice") or "", "tier": source.get("Tier"),
         })
+    if published_signals() == out:
+        print(f"No change: the same {len(out)} approved signals are already on the site.")
+        return 0
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                                "count": len(out), "signals": out}, ensure_ascii=False, indent=1), encoding="utf-8")

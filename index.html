@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>BASIN: signals of change across the Murray-Darling Basin</title>
+<title>BASIN: early intelligence for decisions across the Murray-Darling Basin</title>
 <!--
   BASIN pilot explorer.
 
@@ -51,12 +51,13 @@
   .brand { display:flex; align-items:center; gap:1rem; margin-bottom:2.25rem; }
   .brand img { width:150px; height:auto; display:block; }
   .pilot { border:1px solid rgba(255,255,255,.5); border-radius:999px; padding:.15rem .7rem; font-size:.875rem; }
-  h1 { margin:0 0 1rem; max-width:13em; font-weight:300; font-size:clamp(2.1rem,5.2vw,3.7rem); line-height:1.08; letter-spacing:-.025em;
+  h1 { margin:0 0 1rem; max-width:14em; font-weight:300; font-size:clamp(2rem,4.6vw,3.3rem); line-height:1.08; letter-spacing:-.025em;
        color:#fff; }
   @supports ((-webkit-background-clip:text) or (background-clip:text)) {
     h1 { background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent; }
   }
-  .lede { margin:0; max-width:36rem; font-size:1.125rem; line-height:1.5; }
+  .name { margin:0 0 .6rem; font-size:1rem; } .name b { font-weight:700; letter-spacing:.04em; margin-right:.5rem; }
+  .lede { margin:0; max-width:40rem; font-size:1.125rem; line-height:1.5; }
   .lede b { font-weight:600; }
 
   /* ---------- panels ---------- */
@@ -191,9 +192,10 @@
   <div class="wrap">
     <div class="brand">
       <img src="assets/onebasin-logo-negative.png" alt="One Basin CRC" width="150" height="110">
-      <span class="pilot">BASIN pilot, in development</span>
+      <span class="pilot">Pilot, in development</span>
     </div>
-    <h1>Signals of change across the Murray-Darling Basin</h1>
+    <p class="name"><b>BASIN</b> Basin-wide Anticipatory Sensing and Intelligence Network</p>
+    <h1>Early intelligence for better decisions across the Murray-Darling Basin</h1>
     <p class="lede" id="lede">Loading the signals.</p>
   </div>
 </header>
@@ -201,18 +203,19 @@
 <main><div class="wrap">
   <div class="grid g-hero">
     <section class="panel" aria-labelledby="h-place">
-      <h2 id="h-place">Where the signals are about</h2>
+      <h2 id="h-place">Where it is happening</h2>
       <p class="hint">Six Basin regions sit inside the whole Basin, Australia, the Asia-Pacific and the world. Choose any of them. This is a diagram, not a map.</p>
       <div id="place"></div>
     </section>
     <div class="stack">
       <section class="panel" aria-labelledby="h-lens">
-        <h2 id="h-lens">Through which lens</h2>
+        <h2 id="h-lens">What it is about</h2>
         <div class="bars" id="lens"></div>
         <p class="small" id="lensNote"></p>
       </section>
       <section class="panel" aria-labelledby="h-kind">
-        <h2 id="h-kind">What kind of signal, and how far ahead</h2>
+        <h2 id="h-kind">What it means, and how soon</h2>
+        <p class="hint">A bright spot is working and worth copying. A blind spot is being overlooked. A critical uncertainty could go either way. An action priority needs a decision now.</p>
         <div class="kinds" id="kind"></div>
         <div class="horizon" id="horizon"></div>
       </section>
@@ -221,27 +224,27 @@
 
   <div class="grid g-two">
     <section class="panel" aria-labelledby="h-voice">
-      <h2 id="h-voice">Whose voice</h2>
+      <h2 id="h-voice">Who is saying it</h2>
       <p class="hint">A short bar means few signals collected so far. It does not mean that voice has little to say.</p>
       <div class="bars voices" id="voice"></div>
     </section>
     <section class="panel" aria-labelledby="h-heat">
       <h2 id="h-heat">Where we are looking, and where we are not</h2>
-      <p class="hint">Each cell counts the signals for one place through one lens. Darker means more. A dashed cell is a gap: nothing has been collected there yet.</p>
+      <p class="hint">Each cell counts the signals for one place and one topic. Darker means more. A dashed cell is a gap: nothing has been collected there yet.</p>
       <table class="heat" id="heat"></table>
     </section>
   </div>
 
   <section class="panel" style="margin-top:1.25rem" aria-labelledby="h-thread" id="threads" hidden>
-    <h2 id="h-thread">Follow a thread</h2>
-    <p class="hint">Trends and sectors that run through the signals.</p>
+    <h2 id="h-thread">The bigger patterns</h2>
+    <p class="hint">Trends that several signals point to, and the industries they touch.</p>
     <h3 id="h-trend">Trends</h3><div class="bars trends" id="trend"></div>
     <button class="plain" id="trendMore" type="button" hidden></button>
     <h3 style="margin-top:1rem">Sectors</h3><div class="chips" id="sector"></div>
   </section>
 
   <section id="signals" aria-labelledby="h-list">
-    <h2 id="h-list">The signals</h2>
+    <h2 id="h-list">What we have found</h2>
     <div class="bar-top">
       <input id="q" type="search" placeholder="Search the signals" aria-label="Search the signals">
       <div class="active" id="active"></div>
@@ -258,7 +261,7 @@
 </div></main>
 
 <footer><div class="wrap cols">
-  <div><h2>How this works</h2><p>BASIN gathers signals of change from public sources. Anything the nightly scan finds is held for a person to check before it appears here. Each entry is a headline, a link and our own short summary. The original belongs to its publisher.</p></div>
+  <div><h2>How this works</h2><p>BASIN gathers evidence of what is changing from public sources, so people across the Basin can decide with better information. Anything the nightly scan finds is held for a person to check before it appears here. Each entry is a headline, a link and our own short summary. The original belongs to its publisher.</p></div>
   <div><h2>Add what you are noticing</h2><p>Adding your own signals is the next part of this pilot. It is not open yet.</p></div>
   <div><h2>About</h2><p>A pilot by the One Basin CRC. This is a working prototype and will change.</p><p id="updated"></p></div>
 </div></footer>
@@ -315,7 +318,7 @@ function places(s) {
 /* The things a person can choose, and how to read each one off a signal. */
 const DIMS = {
   place:   { label: "Place",   of: places },
-  lens:    { label: "Lens",    of: s => s.steep || [] },
+  lens:    { label: "Topic",   of: s => s.steep || [] },
   voice:   { label: "Voice",   of: s => [s.voice || "Voice not recorded"] },
   kind:    { label: "Kind",    of: s => s.valence ? [s.valence] : [] },
   horizon: { label: "Horizon", of: s => s.horizon || [] },
@@ -550,11 +553,11 @@ fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data 
   trendNotes = new Map((data.trends || []).map(t => [t.name, t.description || ""]));
   const sources = new Set(all.map(s => s.source).filter(Boolean)).size;
   const lede = $("lede"); lede.replaceChildren();
-  lede.append(el("b", "", all.length + " signals"), " from ", el("b", "", sources + " public sources"),
-    ", read through six lenses. Choose a place, a lens or a voice to see what is being noticed, and what is not.");
+  lede.append("BASIN brings together what is changing across the Basin: ", el("b", "", all.length + " signals"), " so far, from ", el("b", "", sources + " public sources"),
+    ", from local papers to government and research. A signal is one piece of evidence that something is changing. Choose a place, a topic or a voice to see what is being noticed, and what is being missed.");
   const whole = new Map(); for (const s of all) for (const l of s.steep || []) whole.set(l, (whole.get(l) || 0) + 1);
   const thin = LENSES.slice().sort((a, b) => (whole.get(a) || 0) - (whole.get(b) || 0)).slice(0, 2);
-  $("lensNote").textContent = "Across the whole collection, the thinnest lenses are " + thin.map(l => l + " (" + (whole.get(l) || 0) + ")").join(" and ") + ".";
+  $("lensNote").textContent = "Across the whole collection, the thinnest topics are " + thin.map(l => l + " (" + (whole.get(l) || 0) + ")").join(" and ") + ".";
   $("updated").textContent = "Signals last changed on " + (niceDate(data.generated, true) || "a date not yet recorded") + ".";
   readAddress(); update();
 }).catch(() => { $("lede").textContent = "The signals could not be loaded. Please try again shortly."; });

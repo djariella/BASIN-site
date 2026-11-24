@@ -1,6 +1,6 @@
 # BASIN: the public pilot page
 
-This repository holds one web page and one data file. Together they are the public face of the BASIN pilot: signals of change from across the Murray-Darling Basin, gathered from public sources.
+This repository holds one web page and one data file. Together they are the public face of the BASIN pilot: evidence of what is changing across the Murray-Darling Basin, gathered from public sources so people can decide with better information.
 
 **The page:** https://djariella.github.io/BASIN-site/
 

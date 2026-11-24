@@ -271,7 +271,7 @@
       </section>
       <section class="panel" aria-labelledby="h-kind">
         <h2 id="h-kind">What it means, and how soon</h2>
-        <p class="hint">A bright spot is working and worth copying. A blind spot is being overlooked. A critical uncertainty could go either way. An action priority needs a decision now.</p>
+        <p class="hint">A bright spot is working well or giving hope. A blind spot is something we are not talking about and should be. A critical uncertainty matters a lot and could go either way. An action priority matters a lot and we are fairly sure how it will unfold, so it can be acted on now.</p>
         <div class="kinds" id="kind"></div>
         <div class="horizon" id="horizon"></div>
       </section>
@@ -482,7 +482,11 @@ function drawHeat() {
   const thead = el("thead"); thead.appendChild(head); $("heat").replaceChildren(thead, body);
 }
 /* Short names for the bubbles. The full name shows on hover and in the panel. */
-const SHORT = [[/scarcity/i, "Water scarcity"], [/trust gap/i, "Trust and the Basin Plan review"], [/remote-sensing|blockchain/i, "Water technology"],
+const SHORT = [[/^Data centres/i, "Data centres"], [/^A local say/i, "Energy and mining projects"], [/^Health and aged care/i, "Health and aged care"],
+  [/^Housing pressure/i, "Housing"], [/^Everyday services/i, "Everyday services"], [/^Young people/i, "Young people and workers"],
+  [/^Council budgets/i, "Council budgets"], [/^Trust, fairness/i, "Trust and who decides"], [/^First Nations-led plans/i, "First Nations-led plans and rights"],
+  [/^First Nations organisations building/i, "First Nations organisations"], [/^Farm sectors/i, "Farm sectors re-sorting"], [/^River repair/i, "River repair"],
+  [/scarcity/i, "Water scarcity"], [/trust gap/i, "Trust and the Basin Plan review"], [/remote-sensing|blockchain/i, "Water technology"],
   [/buyback.*backlash/i, "Buyback backlash"], [/fish deaths/i, "Fish deaths and algae"], [/First Nations water rights/i, "First Nations water rights"],
   [/Tagus/i, "Lessons from Spain and Cape Town"], [/Room for the River/i, "Lessons from the Netherlands and Israel"], [/carp/i, "Carp control"],
   [/Mekong/i, "Lessons from the Mekong and Nile"], [/H5N1/i, "Bird flu in wetlands"], [/Colorado/i, "Lessons from the Colorado"],

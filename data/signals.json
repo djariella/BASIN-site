@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24T05:05:58+00:00",
- "count": 260,
+ "generated": "2026-11-25T00:00:00+00:00",
+ "count": 319,
  "trends": [
   {
    "name": "Widening trust gap between the MDBA and Basin communities over the Basin Plan review",
@@ -97,6 +97,54 @@
   {
    "name": "The Indus Waters Treaty ruling and Rhine's shipping-halting drought show water disputes now reach courtrooms and critical infrastructure",
    "description": "A Hague Court of Arbitration ruled in August 2026 that India must uphold its 65-year-old water-sharing treaty with Pakistan, which India promptly rejected as \"illegally constituted,\" while record-low Rhine water levels the same year repeatedly halted European river shipping — together showing that water disputes are no longer confined to remote basins but now reach international courts and continental supply chains."
+  },
+  {
+   "name": "Data centres arriving in river towns",
+   "description": "Proposals for data centres at Tailem Bend, Wagga Wagga, Mulwala and Bundey are raising questions about water, power and community consent."
+  },
+  {
+   "name": "A local say and a fair share from energy and mining projects",
+   "description": "Communities and councils are asking for a say in, and a fair return from, wind, solar, gas and mineral projects on Basin land."
+  },
+  {
+   "name": "Health and aged care harder to reach",
+   "description": "Rural health and aged care are getting harder to reach, and towns are finding their own ways to keep services open."
+  },
+  {
+   "name": "Housing pressure and new ways to house people",
+   "description": "Rents and housing supply are under pressure in Basin towns, alongside new answers such as land lease estates, crisis housing and tiny homes."
+  },
+  {
+   "name": "Everyday services thinning in small towns",
+   "description": "Small towns are losing everyday services such as fuel, local news and meeting places, while food relief and volunteers are stretched."
+  },
+  {
+   "name": "Young people, training and the workers towns need",
+   "description": "Preschools, schools, study hubs and training are shaping whether young people stay, while towns rely on seasonal and migrant workers."
+  },
+  {
+   "name": "Council budgets and town water costs",
+   "description": "Councils face rising costs for water, sewer and other services, and residents are being asked what they want councils to do."
+  },
+  {
+   "name": "Trust, fairness and who decides",
+   "description": "Trust in government is low while local ties stay strong, and people are asking for a fair say in decisions that affect them."
+  },
+  {
+   "name": "First Nations-led plans and rights for water and Country",
+   "description": "First Nations organisations are publishing their own declarations, water plans and Country Plans, and rights to land and water are moving through law, the courts and Treaty."
+  },
+  {
+   "name": "First Nations organisations building services, businesses and partnerships",
+   "description": "First Nations organisations are building housing, health services, ranger teams, digital hubs and cultural events, and signing agreements with councils."
+  },
+  {
+   "name": "Farm sectors re-sorting: vines out, almonds in, markets moving",
+   "description": "Wine grapes are being pulled out, nut plantings are growing, and export markets and farmland values are shifting."
+  },
+  {
+   "name": "River repair done together",
+   "description": "Farmers, irrigators, community groups and agencies are repairing rivers and wetlands together, from fish screens to environmental water carried through irrigation networks."
   }
  ],
  "megatrends": [
@@ -7866,6 +7914,1879 @@
    "source_domain": "theloadstar.com",
    "voice": "Water sector, business and trade press",
    "tier": 2
+  },
+  {
+   "id": 285,
+   "title": "Canada tables a First Nations Clean Water Act with C$4.6 billion and revised wording on the right to water",
+   "summary": "Smart Water Magazine reports that Bill C-37 was introduced on 16 June 2026, the federal government's third attempt at this law. It would set drinking water standards on First Nations lands, create a First Nations-led water commission and set up source water protection agreements with provinces. The earlier bill named clean drinking water as a human right, while the new one commits to its progressive realisation, and First Nations leaders say essential elements are missing.",
+   "url": "https://smartwatermagazine.com/news/smart-water-magazine/canada-tables-first-nations-clean-water-act-46-billion-funding-pledge",
+   "published": "2026-06-18",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Values",
+    "Political"
+   ],
+   "relevance": "Canada is legislating drinking water standards, source water agreements and a First Nations-led water commission while debating how the right to water is worded. Basin governments face parallel questions about safe town water in remote communities and about shared authority over water.",
+   "regions": [],
+   "scope": "Global",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 293,
+   "title": "Committee on Aboriginal and Torres Strait Islander Water Interests urges states and territories to sign the National Water Agreement",
+   "summary": "The communiqué from the Committee's meeting in Gimuy (Cairns) on 15 to 17 July 2026 says it continues to advocate for states and territories to sign the new National Water Agreement. The department briefed members on the Inland Waters Target being developed under the National Agreement on Closing the Gap, and the Committee sits on that working group. It will also prepare a submission to the Water Act review discussion paper.",
+   "url": "https://www.dcceew.gov.au/sites/default/files/documents/cawi-communique-12.pdf",
+   "published": "2026-07-17",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Values",
+    "Political"
+   ],
+   "relevance": "The Committee advises the Commonwealth on First Nations water interests across the country, and its priorities frame Basin programs such as the Aboriginal Water Entitlements Program. Its call on the National Water Agreement and its planned Water Act review submission bear directly on Basin arrangements.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Growing recognition of First Nations water rights through the Aboriginal Water Entitlements Program"
+   ],
+   "source": "Department of Climate Change, Energy, the Environment and Water, including the Commonwealth Environmental Water Holder",
+   "source_domain": "dcceew.gov.au",
+   "voice": "Government",
+   "tier": 1
+  },
+  {
+   "id": 294,
+   "title": "Commonwealth publishes its third annual report on biosecurity funding and spending",
+   "summary": "The Department of Agriculture, Fisheries and Forestry released the Biosecurity Funding and Expenditure Report 2025-26 on 26 October 2026. It is the third year of dedicated public reporting and adds detail on spending and on national emergency responses. Nine case studies cover areas such as First Nations partnerships, regional capability, emergency preparedness and diagnostics.",
+   "url": "https://www.agriculture.gov.au/about/news/biosecurity-funding-report",
+   "published": "2026-10-26",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Political",
+    "Economic"
+   ],
+   "relevance": "H5 bird flu, carp and weeds make biosecurity spending a Basin matter, and this report shows where national funds went, including emergency responses. Annual public reporting of this kind is a model for other shared programs where communities ask where the money goes.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "Dryland Grazing and Livestock",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [],
+   "source": "Department of Agriculture, Fisheries and Forestry, including ABARES",
+   "source_domain": "agriculture.gov.au",
+   "voice": "Government",
+   "tier": 1
+  },
+  {
+   "id": 297,
+   "title": "Griffith Local Aboriginal Land Council commits water for the Lake",
+   "summary": "Griffith Local Aboriginal Land Council chose to send 400 megalitres from its Cultural Water Access Licence into Lake Wyangan North, which had fallen to low levels and was under a red alert. Delivery was staged at about 30 megalitres a day, and Griffith City Council publicly thanked the Land Council for the decision.",
+   "url": "https://www.griffith.nsw.gov.au/News/News/Griffith-Local-Aboriginal-Land-Council-commits-400-megalitres-to-support-Lake",
+   "published": "2026-03-06",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Values",
+    "Environmental"
+   ],
+   "relevance": "A land council used its own cultural water entitlement to support a lake the whole town uses, which shows one way First Nations water holdings and local government can work together in the Murrumbidgee Irrigation Area.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "Griffith City Council",
+   "source_domain": "griffith.nsw.gov.au",
+   "voice": "Local government and regional bodies",
+   "tier": 1
+  },
+  {
+   "id": 300,
+   "title": "Have Your Say on the South West Renewable Engery Zone Community and Employment Benefit Program",
+   "summary": "Regional Development Australia Riverina reported that EnergyCo had opened consultation on how a Community and Employment Benefit Program for the South West Renewable Energy Zone should be designed, backed by an initial $60 million from the NSW Government. Residents, councils and First Nations groups were invited to respond through a survey, a webinar and drop-in sessions in Hay, Coleambally, Balranald and Darlington Point during August 2026.",
+   "url": "https://rdariverina.org.au/news/2026/7/27/have-your-say-on-the-south-west-renewable-engery-zone-community-and-employment-benefit-program",
+   "published": "2026-07-27",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Economic",
+    "Social",
+    "Political"
+   ],
+   "relevance": "Towns in the western Murrumbidgee that host wind, solar and transmission projects are being asked how benefit money should be spent, at a time when the same communities are also dealing with water recovery.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "A local say and a fair share from energy and mining projects"
+   ],
+   "source": "Regional Development Australia Riverina",
+   "source_domain": "rdariverina.org.au",
+   "voice": "Local government and regional bodies",
+   "tier": 1
+  },
+  {
+   "id": 307,
+   "title": "NRL legend Greg Inglis brings mental health message to Cowra",
+   "summary": "Greg Inglis and his Goanna Academy ran mental health and wellbeing sessions at three Cowra schools and a community forum attended by about 80 to 90 people. The visit was arranged with Wellways, which secured funding for the Indigenous-owned organisation's programs after contacting it about mental health, suicide, substance use and domestic violence concerns in the town.",
+   "url": "https://www.cowraguardian.com.au/nrl-legend-greg-inglis-brings-mental-health-message-to-cowra-j0wk1sx0",
+   "published": "2026-11-18",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social"
+   ],
+   "relevance": "A locally arranged program that links schools, a service provider and a well-known public figure is one practical response to the mental health load carried by Lachlan valley communities.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "Escalating calls for sustained rural mental health investment amid compounding drought and cost pressures"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 320,
+   "title": "Water festival celebrates Yorta Yorta culture",
+   "summary": "The Burnanga Indigenous Fishing Club presented the free Burnanga River Voices Festival at Shepparton's Victoria Park Lake on 7 November. The day combined music, cultural performances, a community fishing competition and clinics, children's activities and an exhibition about healthy rivers and environmental water.",
+   "url": "https://www.countrynews.com.au/water/water-festival-celebrates-yorta-yorta-culture/",
+   "published": "2026-11-13",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Values",
+    "Social",
+    "Environmental"
+   ],
+   "relevance": "A community event led by a First Nations fishing club brought the wider Shepparton public together around river health and water for the environment.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Tourism and Recreation"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 321,
+   "title": "YYNAC and Moira Shire Council Strengthen Partnership",
+   "summary": "Yorta Yorta Nation Aboriginal Corporation and Moira Shire Council signed a new Memorandum of Understanding at Dharnya. The corporation says the agreement sets a framework for working together, including more Aboriginal participation in decision-making, employment and procurement.",
+   "url": "https://yynac.com.au/yynac-and-moira-shire-council-strengthen-partnership/",
+   "published": "2026-10-14",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Values",
+    "Political"
+   ],
+   "relevance": "A formal agreement between a Traditional Owner corporation and a Murray River council gives both a standing way to work together on decisions, jobs and contracts in the shire.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "Yorta Yorta Nation Aboriginal Corporation",
+   "source_domain": "yynac.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 322,
+   "title": "New public artwork celebrating Yorta Yorta culture, Country and community to be unveiled in November",
+   "summary": "National Indigenous Times reported that a new public artwork by artist Tahnee Day would be installed across the windows of Kaiela Arts in Shepparton and unveiled at a free public event on 13 November. The work came from a new partnership between Kaiela Arts and the John Truscott Design Foundation, which named Day the recipient of its 2026 prize.",
+   "url": "https://nit.com.au/30-10-2026/27258/new-public-artwork-celebrating-yorta-yorta-culture-country-and-community-to-be-unveiled-in-november",
+   "published": "2026-10-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Values",
+    "Social"
+   ],
+   "relevance": "Public art by a local First Nations artist, backed by a new partnership from outside the region, adds to the ways river Country is present in the daily life of a Basin city.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 353,
+   "title": "Significant wetland to remain in Indigenous hands following federal funding deal",
+   "summary": "The Nari Nari Tribal Council, which recently bought Juanbung and Boyong Stations from The Nature Conservancy, has secured $15 million from the Clean Energy Finance Corporation through Bank Australia to care for the Great Cumbung. The property of about 34,000 hectares sits where the Murrumbidgee and Lachlan rivers meet and is one of the largest remaining reed and river red gum wetlands in the Basin. It supports more than 130 bird species, including the Australasian bittern and Australian painted snipe.",
+   "url": "https://nit.com.au/12-06-2026/24776/significant-wetland-to-remain-in-indigenous-hands-following-federal-funding-deal",
+   "published": "2026-06-12",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+10yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Economic",
+    "Values"
+   ],
+   "relevance": "Public green finance is backing First Nations ownership and restoration of a major Basin wetland, an approach that could be used for other floodplain country.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 354,
+   "title": "Grave conditions threaten the Murray-Darling Basin - Conservationists call for major changes as review looms",
+   "summary": "Releasing its Basin Plan review submission on 30 April 2026, the Murray Darling Conservation Alliance said only 4 per cent of Basin wetlands are getting the water they need and that water use still exceeds sustainable limits. It asked for more water for the environment, climate change built into all water planning, open water accounting, water justice for First Nations, who it says hold less than 0.2 per cent of entitlements, and investment to help regional communities adjust to a drier future.",
+   "url": "https://environmentvictoria.org.au/2026/04/30/grave-conditions-threaten-the-murray-darling-basin-conservationists-call-for-major-changes-as-review-looms/",
+   "published": "2026-04-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Political",
+    "Values"
+   ],
+   "relevance": "This is the shared position of conservation councils across the Basin states going into the 2026 review, and it sits opposite the irrigation sector's call to stop water recovery.",
+   "regions": [],
+   "scope": "Whole of Basin",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Widening trust gap between the MDBA and Basin communities over the Basin Plan review"
+   ],
+   "source": "Environment Victoria",
+   "source_domain": "environmentvictoria.org.au",
+   "voice": "Environment and conservation",
+   "tier": 1
+  },
+  {
+   "id": 356,
+   "title": "New Hope for Threatened Wetland Bird",
+   "summary": "BirdLife Australia announced on World Wetlands Day 2026 a National Australasian Bittern Recovery Team of twelve experts, including Traditional Owners, community members and a rice farmer, funded through the Saving Native Species Program. The bittern is listed as Endangered after steep declines linked to the draining and degradation of wetlands. BirdLife notes that rice farms have provided important habitat for the species in recent decades.",
+   "url": "https://birdlife.org.au/news/new-hope-for-threatened-wetland-bird/",
+   "published": "2026-02-02",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Social"
+   ],
+   "relevance": "Most Australian rice is grown in the southern Basin, so the bittern's recovery depends partly on how rice growers manage water and on how much water rice receives.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "Government and Natural Resource Management",
+    "Irrigated Broadacre Cropping (Cotton and Rice)"
+   ],
+   "trends": [
+    "River repair done together"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 362,
+   "title": "Cool Burning: Could It Work on Your Property?",
+   "summary": "Southern Queensland Landscapes is offering landholders in the Condamine River Basin help to plan and carry out cool burns, low-intensity fires lit in cooler months to manage pasture, weeds and fuel while protecting the soil surface. First Nations Fire Practitioners lead the burns alongside landholders. The work is funded through the Australian Government's Climate-Smart Agriculture Program and runs to 2028.",
+   "url": "https://www.sqlandscapes.org.au/cool-burning-could-it-work-on-your-property",
+   "published": "2026-08-28",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Social",
+    "Values"
+   ],
+   "relevance": "First Nations fire practitioners and graziers are working side by side on private land in the Condamine, where ground cover and fuel loads affect both fire risk and what washes into the river.",
+   "regions": [
+    "Northern Basin (Queensland)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Dryland Grazing and Livestock",
+    "First Nations Water and Land Enterprises"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "Southern Queensland Landscapes",
+   "source_domain": "sqlandscapes.org.au",
+   "voice": "Environment and conservation",
+   "tier": 1
+  },
+  {
+   "id": 365,
+   "title": "Collaborative project relocates native fish",
+   "summary": "During the 2026 channel shutdown, a ground crew of Barapa Barapa Traditional Owners working with the Western Murray Land Improvement Group and Murray Irrigation rescued more than 250 native fish and 18 turtles from drained irrigation channels in the NSW Murray and returned them to nearby rivers. The catch included 53 Murray cod and 32 Murray hardyhead, up from 109 fish in 2025. The idea was first raised by a member of the Watti Watti Wamba Wamba Nation in 2022.",
+   "url": "https://www.murrayirrigation.com.au/collaborative-project-relocates-native-fish",
+   "published": "2026-07-20",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Environmental",
+    "Social",
+    "Values"
+   ],
+   "relevance": "Irrigation channels strand native fish when they are drained for maintenance, and this Traditional Owner-led rescue is a low-cost approach other irrigation districts could copy.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [
+    "River repair done together"
+   ],
+   "source": "Murray Irrigation Limited",
+   "source_domain": "murrayirrigation.com.au",
+   "voice": "Farming and irrigation",
+   "tier": 2
+  },
+  {
+   "id": 367,
+   "title": "Murrumbidgee Nations launch Declaration to guide future care of the river",
+   "summary": "Traditional Owners of the Murrumbidgee catchment, working with Murray Lower Darling Rivers Indigenous Nations (MLDRIN), launched the Murrumbidgee Catchment Nations Declaration during NAIDOC Week. The joint release with the Commonwealth Environmental Water Holder says the document sets out how Traditional Owners understand the catchment and how it should be respected and cared for. The acting Commonwealth Environmental Water Holder committed to working with MLDRIN and Traditional Owners on how to apply it in environmental water management.",
+   "url": "https://mldrin.org/murrumbidgee-nations-launch-declaration-to-guide-future-care-of-the-river/",
+   "published": "2026-07-10",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Values",
+    "Political",
+    "Environmental"
+   ],
+   "relevance": "Eleven Nations with connections to the Murrumbidgee have stated shared terms for the river's care, and the Commonwealth's environmental water agency has publicly committed to work out how to apply them. The Griffith hub region sits in this catchment.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management",
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "Murray Lower Darling Rivers Indigenous Nations (MLDRIN)",
+   "source_domain": "mldrin.org",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 368,
+   "title": "Murray-Darling Cultural Flows funding 'once-in-a-decade opportunity' for First Nations water justice",
+   "summary": "National Indigenous Times reports that 50 projects from Queensland to Victoria received grants from the $20 million Cultural Flows Planning for Cultural Economies program. MLDRIN received eight grants, and DJAARA will pilot a Cultural Flows Management Plan through its enterprise DJANDAK. The grants pay for planning and skills over two years and cannot be used to buy water entitlements.",
+   "url": "https://nit.com.au/20-03-2026/23289/murray-darling-cultural-flows-funding-once-in-a-decade-opportunity-for-first-nations-water-justice",
+   "published": "2026-03-20",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Economic",
+    "Political",
+    "Values"
+   ],
+   "relevance": "Planning for cultural flows is now funded across the Basin, while the water itself has to come from elsewhere. What happens to these plans after two years will show whether planning leads to water in First Nations hands.",
+   "regions": [],
+   "scope": "Whole of Basin",
+   "sectors": [
+    "First Nations Water and Land Enterprises"
+   ],
+   "trends": [
+    "Growing recognition of First Nations water rights through the Aboriginal Water Entitlements Program"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 369,
+   "title": "Traditional Owners urge federal government to recognise and respect water rights in Act review",
+   "summary": "Indigenous Nations-led water organisations connected to the Martuwarra Fitzroy River, the Roper River, the Kati Thanda-Lake Eyre Basin and the Murray-Darling system issued a joint call on the review of the Water Act 2007. They ask that a renewed Act recognise Aboriginal and Torres Strait Islander Peoples' rights and responsibilities to water, support self-determination in water governance and engage with Traditional Owner-led governance bodies. The acting Chair of MLDRIN is among those quoted.",
+   "url": "https://nit.com.au/01-09-2026/26240/traditional-owners-urge-federal-government-to-recognise-and-respect-water-rights-in-act-review",
+   "published": "2026-09-01",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Values"
+   ],
+   "relevance": "The Water Act sits above the Basin Plan, so what the review recommends on First Nations rights will shape the next Plan. Basin Nations are making this case together with river Nations from other parts of Australia.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 370,
+   "title": "Water Act needs 'major rewrite' to include First Nations rights, advocates say",
+   "summary": "The Gamilaroi Water Carriers, Elder Traditional Owner women based in Moree, made a submission to the Water Act review and say the voices of the northern Basin Aboriginal community have long been taken for granted. They ask that the Act acknowledge First Nations water rights, define cultural water and how it reaches Basin Nations, support Aboriginal-owned water holding bodies and provide for regional First Nations water councils. One Elder calls for a levy on agricultural exports as restitution for lost water resources.",
+   "url": "https://nit.com.au/03-09-2026/26287/water-act-needs-major-rewrite-to-include-first-nations-rights-advocates-say",
+   "published": "2026-09-03",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Values",
+    "Political",
+    "Economic"
+   ],
+   "relevance": "This is a northern Basin voice from Moree, on the Gwydir. It puts specific design proposals in front of the review, including regional First Nations water councils.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 371,
+   "title": "Wadi Wadi Traditional Owner launches legal action to protect significant sites on the Murray River",
+   "summary": "A Wadi Wadi Traditional Owner, represented by Environmental Justice Australia, has challenged the Victorian Government's approval of a cultural heritage management plan for a floodplain engineering project at Nyah. He says the approval did not properly assess or protect Aboriginal cultural heritage and that consultation with Traditional Owners was inadequate. The article carries no government response and gives no hearing date.",
+   "url": "https://nit.com.au/25-06-2026/24994/wadi-wadi-traditional-owner-launches-legal-action-to-protect-significant-sites-on-the-murray-river",
+   "published": "2026-06-25",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Political",
+    "Values",
+    "Environmental"
+   ],
+   "relevance": "The Nyah works are part of the Basin's offset program, which uses regulators, levees and pumps on selected floodplains. The case tests how cultural heritage and consultation are handled when such projects are approved.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)",
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 372,
+   "title": "DJAARA releases first Environmental Water Plan for Djandak",
+   "summary": "DJAARA (the Dja Dja Wurrung Clans Aboriginal Corporation) released its first Environmental Water Plan for Djandak, Dja Dja Wurrung Country in central Victoria. The plan states DJAARA's position on how environmental water should be used on Djandak each year and is led and owned by DJAARA. It comes out of a three-year partnership with the Commonwealth Environmental Water Holder that began in 2025 and is meant to sit beside Commonwealth and Victorian planning.",
+   "url": "https://djadjawurrung.com.au/djaara-releases-first-environmental-water-plan-for-djandak/",
+   "published": "2026-09-16",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Values",
+    "Political"
+   ],
+   "relevance": "A Traditional Owner corporation now publishes its own yearly position on environmental water for its Country. Other Nations and water holders can look at how this plan is used in watering decisions.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)",
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "DJAARA (Dja Dja Wurrung Clans Aboriginal Corporation)",
+   "source_domain": "djadjawurrung.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 373,
+   "title": "DJAARA and North Central Catchment Management Authority share a new approach for the Upper Avoca",
+   "summary": "DJAARA and the North Central Catchment Management Authority released a healthy catchment plan for the Upper Avoca and invited landholders and communities to take part. DJAARA says it is the first such plan built around Dja Dja Wurrung values. The catchment authority's chief executive links the work to reduced flows under climate change and to the farming and viticulture communities along the river.",
+   "url": "https://djadjawurrung.com.au/djaara-and-north-central-catchment-management-authority-share-a-new-approach-for-the-upper-avoca/",
+   "published": "2026-06-18",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Social",
+    "Values"
+   ],
+   "relevance": "The plan is a working example of a Traditional Owner corporation and a catchment authority planning a Basin catchment together with landholders. It also names reduced flows under climate change as a reason to plan differently.",
+   "regions": [
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management",
+    "Viticulture and Wine"
+   ],
+   "trends": [
+    "Intensifying climate-driven water scarcity outlook for the Basin"
+   ],
+   "source": "DJAARA (Dja Dja Wurrung Clans Aboriginal Corporation)",
+   "source_domain": "djadjawurrung.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 374,
+   "title": "2026-27 Aboriginal Water Entitlements Program Annual Watering Plan released",
+   "summary": "The Commonwealth released the 2026-27 Annual Watering Plan for the Murray-Darling Basin Aboriginal Water Entitlements Program, guided by the program's Advisory Group and Directorate of Basin First Nations representatives. A companion update says the program had secured 21.27 gigalitres of entitlements valued at $81.75 million by 31 July 2026, about 0.19 per cent of the Basin's surface water consumptive pool. The Australian Government holds the water under interim arrangements while a First Nations-led holding body is designed, and no final decision on that body has been made.",
+   "url": "https://engagementhub.dcceew.gov.au/awep/news/2026-27-murraydarling-basin-aboriginal-water-entitlements-program-annual-watering-plan-",
+   "published": "2026-09-25",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Economic",
+    "Environmental"
+   ],
+   "relevance": "Entitlements valued at about four fifths of the $100 million commitment have been secured, so attention moves to how the water is used and who holds it. The decision on the enduring holding arrangement is still open.",
+   "regions": [],
+   "scope": "Whole of Basin",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [
+    "Growing recognition of First Nations water rights through the Aboriginal Water Entitlements Program"
+   ],
+   "source": "Department of Climate Change, Energy, the Environment and Water, including the Commonwealth Environmental Water Holder",
+   "source_domain": "dcceew.gov.au",
+   "voice": "Government",
+   "tier": 1
+  },
+  {
+   "id": 375,
+   "title": "Aboriginal leaders shaping future of water management in SA",
+   "summary": "SA Native Title Services reports that representatives of prescribed bodies corporate approved a draft South Australian Framework to Advance First Nations Water Interests at a workshop in Port Augusta. The draft follows 18 months of co-design between Aboriginal leaders, the Department for Environment and Water and SA Native Title Services. It now goes to the South Australian Government for consideration.",
+   "url": "https://www.nativetitlesa.org/aboriginal-leaders-shaping-future-of-water-management-in-sa/",
+   "published": "2026-04-17",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Values"
+   ],
+   "relevance": "The framework will guide how South Australia works with First Nations on water, including along the River Murray. The next step is a government decision on a draft that Traditional Owner representatives have already approved.",
+   "regions": [
+    "South Australian Murray"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "SA Native Title Services",
+   "source_domain": "nativetitlesa.org",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 376,
+   "title": "RMMAC Newsletter September 2026: cultural flows yarning circles and a Living Murray knowledge sharing pilot",
+   "summary": "The River Murray and Mallee Aboriginal Corporation reports that its cultural flows project is in its early stages, with yarning circles asking the community what it wants to do with cultural water. It hosted the first pilot of a Living Murray Indigenous knowledge sharing event, with Indigenous facilitators from the six icon sites, over two days at the Chowilla Floodplain. The newsletter also covers ranger training, paid survey work and junior rangers taking student leaders on Country.",
+   "url": "https://rmmac.org.au/download/rmmac-newsletter-september-2026/",
+   "published": "2026-10-20",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Values",
+    "Social",
+    "Environmental"
+   ],
+   "relevance": "This is the corporation in the Loxton hub region describing its own water planning and ranger work. It shows cultural flows planning reaching the stage where a community decides what cultural water is for.",
+   "regions": [
+    "South Australian Murray"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "River Murray and Mallee Aboriginal Corporation",
+   "source_domain": "rmmac.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 377,
+   "title": "RMMAC open Kawunwampu Cultural Centre and Ngamrapku Cafe",
+   "summary": "The River Murray and Mallee Aboriginal Corporation opened a cultural centre and cafe in the Riverland town of Glossop, on the site of the former Jerry Mason Centre. The cafe menu is built around native ingredients, and the corporation plans cultural tours, walking trails and ranger-led experiences. SA Native Title Services spoke with the corporation's chair and a director at the opening.",
+   "url": "https://www.nativetitlesa.org/rmmac-open-kawunwampu-cultural-centre-and-ngamrapku-cafe/",
+   "published": "2026-08-28",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Economic",
+    "Social"
+   ],
+   "relevance": "An Aboriginal corporation in the South Australian Riverland has opened a business and a community place of its own. It adds a visitor offer owned by First Peoples to the river towns of the Loxton hub region.",
+   "regions": [
+    "South Australian Murray"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Tourism and Recreation"
+   ],
+   "trends": [
+    "River tourism and heritage investment growing in Basin towns"
+   ],
+   "source": "SA Native Title Services",
+   "source_domain": "nativetitlesa.org",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 378,
+   "title": "Aboriginal Corporation supports acquisition of culturally significant Mundoo Island Station",
+   "summary": "The Australian and South Australian governments and the Foundation for National Parks and Wildlife jointly bought the 1,900 hectare Mundoo Island Station near the Murray Mouth, to be added to Coorong National Park. The Ngarrindjeri Aboriginal Corporation supported the purchase, and its executive officer said the corporation looks forward to a co-partnership with the State Government in caring for the property. The station will be destocked and a new park management plan prepared.",
+   "url": "https://nit.com.au/07-01-2026/22037/aboriginal-corporation-supports-acquisition-of-culturally-significant-mundoo-island-station",
+   "published": "2026-01-07",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Political",
+    "Values"
+   ],
+   "relevance": "The property sits at the end of the Murray, inside the Coorong and Lower Lakes Ramsar wetland. How the partnership with the Ngarrindjeri Aboriginal Corporation is written into the new management plan is still to be settled.",
+   "regions": [
+    "South Australian Murray"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Dryland Grazing and Livestock",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "National Indigenous Times",
+   "source_domain": "nit.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 379,
+   "title": "Landmark ruling: native title holders must be heard on water decisions",
+   "summary": "The National Native Title Council welcomed a High Court decision that quashed a proposed 30-year groundwater licence for Singleton Station in the Northern Territory. The Council says the Court found the Minister had not justified the licence term and that Mpwerempwer Aboriginal Corporation was denied procedural fairness on a condition about Aboriginal cultural values. It calls on the Australian Government to involve native title holders early in all decisions about land and waters.",
+   "url": "https://nntc.com.au/2026/08/06/landmark-ruling-native-title-must-be-heard-on-water-decisions/",
+   "published": "2026-08-06",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Values"
+   ],
+   "relevance": "The case is outside the Basin, and it speaks to how any government grants large water licences where native title holders have interests. Basin governments and native title holders will read it for what it means in water licensing and planning here.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "Government and Natural Resource Management",
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 380,
+   "title": "Dharriwaa Elders Group submission to the Basin Plan Review",
+   "summary": "The Dharriwaa Elders Group in Walgett published its submission to the Basin Plan Review, dated 30 April 2026, and describes it as a statement with many references that other Aboriginal community controlled organisations working on water may find useful. The group says the Namoi and Barwon rivers at Walgett have been largely dry in recent years and wants the Commonwealth to uphold its responsibilities for water management. Its long-term goal is to own and manage water for economic development, the environment and cultural practice.",
+   "url": "https://www.dharriwaaeldersgroup.org.au/yuwayangarrali/caring-for-country/basin-plan-review",
+   "published": "2026-04-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Environmental",
+    "Values"
+   ],
+   "relevance": "Walgett sits where the Namoi meets the Barwon, upstream of the Darling. The submission gives the Basin Plan Review a local Elders' account of river conditions and a stated aim of Aboriginal water ownership.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Widening trust gap between the MDBA and Basin communities over the Basin Plan review"
+   ],
+   "source": "Dharriwaa Elders Group",
+   "source_domain": "dharriwaaeldersgroup.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 381,
+   "title": "Milestone for Water Kiosk: Dharriwaa Elders Group's kiosk passes 60,000 litres",
+   "summary": "The Dharriwaa Elders Group reports that its reverse osmosis water kiosk in Walgett, opened in December 2023, had dispensed 60,577 litres of chilled low-sodium drinking water by 28 August 2026. The kiosk responds to high sodium in the town supply after it moved from river water to bore water during drought. It is part of the group's food and water work with Walgett Aboriginal Medical Service and university partners.",
+   "url": "https://www.dharriwaaeldersgroup.org.au/yuwayangarrali/food-water-4-life/milestone-2",
+   "published": "2026-08-28",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social",
+    "Technological"
+   ],
+   "relevance": "A community organisation is supplying drinking water that suits local health needs in a Basin town whose supply changed in drought. It ties river and groundwater conditions directly to household health.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "Dharriwaa Elders Group",
+   "source_domain": "dharriwaaeldersgroup.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 382,
+   "title": "NSWALC responds as the Crown Land Management Amendment Bill passes NSW Parliament",
+   "summary": "The Crown Land Management Amendment (Statutory Review) Bill 2026 passed the NSW Parliament on 16 September 2026 over the opposition of the New South Wales Aboriginal Land Council (NSWALC) and Local Aboriginal Land Councils. NSWALC says the change weakens rights under the Aboriginal Land Rights Act while more than 44,000 land claims remain undetermined, and that 0.2 per cent of NSW has been returned through the claims process in more than 42 years. It says the Government will need to rebuild trust with Aboriginal communities.",
+   "url": "https://alc.org.au/newsroom/media-releases/nsw-government-chooses-to-weaken-aboriginal-land-rights/",
+   "published": "2026-09-16",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Values"
+   ],
+   "relevance": "Local Aboriginal Land Councils across the NSW Basin hold and claim Crown land near rivers and towns. The law change and the claims backlog affect what land they can use and how they work with the State on other matters.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)",
+    "Murray Riverina (NSW-Victoria border)",
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 383,
+   "title": "NSWALC withdraws from the NSW Closing the Gap framework and calls for a fundamental reset",
+   "summary": "NSWALC has withdrawn from the NSW Closing the Gap framework and will end its partnership funding agreement from 31 October 2026. It cites more than 43,000 unresolved land claims, the cultural fishing law that has never commenced, no housing funding for the Land Rights Network and stalled cultural heritage reform. It also says policies and laws are progressing without timely consultation.",
+   "url": "https://alc.org.au/newsroom/network-messages/network-message-nswalc-withdraws-from-nsw-closing-the-gap-framework-and-calls-for-a-fundamental-reset/",
+   "published": "2026-09-04",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Political",
+    "Social"
+   ],
+   "relevance": "The body that supports Local Aboriginal Land Councils across the NSW Basin has stepped back from the State's main partnership framework with Aboriginal organisations. Whether and how that partnership is reset will affect programs in Basin towns.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)",
+    "Murray Riverina (NSW-Victoria border)",
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 384,
+   "title": "NSWALC statement on the cultural fishing law and the Fisheries Management Amendment (Enforcement) Bill 2026",
+   "summary": "In a release dated 25 September 2026, NSWALC says the NSW Government has dropped its proposed Aboriginal Cultural Fishing Regulation and will not commence section 21AA of the Fisheries Management Act, passed in 2009 to recognise and protect cultural fishing. At the same time a Bill before Parliament would widen the search, surveillance and seizure powers of fisheries officers. NSWALC supports action against organised illegal fishing and asks for safeguards for Aboriginal cultural fishers.",
+   "url": "https://alc.org.au/newsroom/media-releases/nsw-government-abandons-cultural-fishing-protections-while-expanding-enforcement-powers/",
+   "published": "2026-09-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Values",
+    "Political",
+    "Social"
+   ],
+   "relevance": "Cultural fishing takes place on Basin rivers as well as the coast, and the same NSW law applies inland. The legal position of cultural fishers is rarely part of Basin water debate, although river health and fishing practice are closely tied.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)",
+    "Murray Riverina (NSW-Victoria border)",
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Aquaculture and Fisheries",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 385,
+   "title": "Section 42 reforms to the Aboriginal Land Rights Act pass NSW Parliament",
+   "summary": "NSWALC confirms that the Aboriginal Land Rights Amendment Bill 2026 has passed the NSW Parliament, changing section 42 of the Aboriginal Land Rights Act. The section restricted how Local Aboriginal Land Councils could deal with some land where native title exists, which NSWALC says added legal cost, delay and uncertainty. NSWALC will work with Aboriginal Affairs NSW and NTSCORP on putting the reforms into practice.",
+   "url": "https://alc.org.au/newsroom/network-messages/network-message-section-42-reforms-pass-parliament/",
+   "published": "2026-11-18",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Economic"
+   ],
+   "relevance": "Land councils in Basin towns hold land they want to use for housing, community, cultural and economic purposes. A clearer legal path could bring more of that land into use.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)",
+    "Murray Riverina (NSW-Victoria border)",
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 386,
+   "title": "200 Aboriginal rangers gather for 2nd annual Ngarringilanha Aboriginal Ranger Gathering",
+   "summary": "More than 200 Aboriginal rangers met on Gomeroi Country for five days of workshops, cultural activities and demonstrations on caring for Country. Tamworth Local Aboriginal Land Council and the Walaaybaa Rangers hosted, with rangers travelling from as far as Cairns and Arnhem Land. NSWALC supported the gathering and noted the strong presence of land council ranger teams.",
+   "url": "https://alc.org.au/newsstories/200-aboriginal-rangers-gather-for-2nd-annual-ngarringilanha-aboriginal-ranger-gathering/",
+   "published": "2026-09-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Environmental",
+    "Social"
+   ],
+   "relevance": "The gathering was hosted from Tamworth, in the Namoi catchment of the northern Basin. Ranger teams are part of the workforce caring for Basin rivers and land, and this network connects them.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 387,
+   "title": "Lightning Ridge Local Aboriginal Land Council's philanthropic partnership delivers a digital hub and local jobs",
+   "summary": "NSWALC profiles a partnership between Lightning Ridge Local Aboriginal Land Council and the Dr Steve Burroughs Foundation that brought in donated goods and funding. It set up a digital hub with computers, printers and internet, giving access to telehealth, job applications, online learning and government services. Donated lawn maintenance equipment became a business that now services several towns.",
+   "url": "https://alc.org.au/newsroom/network-messages/crown-lands-lightning-ridge-lalcs-powerful-philanthropic-partnership-nswalc-showcases-land-rights-success-stories/",
+   "published": "2026-06-16",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Technological",
+    "Social",
+    "Economic"
+   ],
+   "relevance": "Lightning Ridge is in the northern NSW Basin, a long way from larger service centres. The hub shows a land council improving access to health, work and government services from its own base.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 388,
+   "title": "NSWALC approves a permanent Griffith office in its Southern Zone operating model",
+   "summary": "NSWALC has approved a revised operating model for its Southern Zone after endorsing permanent regional offices in Griffith and Batemans Bay in July 2026. An Operations Manager based in Griffith will lead day-to-day support for land councils in the Wiradjuri Region. The model takes effect from November 2026 and is meant to give the zone's 34 land councils more direct local support.",
+   "url": "https://alc.org.au/newsroom/network-messages/network-message-southern-zone-operating-model-reform-approved/",
+   "published": "2026-08-17",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Political",
+    "Social"
+   ],
+   "relevance": "Griffith is one of the Basin hub regions. A permanent, staffed NSWALC office there brings support for Wiradjuri Region land councils closer to the Murrumbidgee.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 389,
+   "title": "New social housing on land council land in Narromine, Nyngan and Girilambone",
+   "summary": "Narromine and Nyngan Local Aboriginal Land Councils received new social housing dwellings in late July 2026 through the Social Housing Accelerator Fund, which NSWALC manages with the NSW Aboriginal Housing Office. The homes were built on land the two land councils acquired through the Aboriginal Land Rights Act. NSWALC says the fund has delivered 30 community housing dwellings across the network.",
+   "url": "https://alc.org.au/newsroom/network-messages/network-message-nswalc-continues-partnership-with-social-housing-accelerator-fund-to-deliver-homes-in-the-central-region/",
+   "published": "2026-07-24",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social",
+    "Economic"
+   ],
+   "relevance": "These towns are in the Macquarie and Bogan country of the NSW Basin. Housing built on land council land is a direct social return from land rights in Basin communities.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "NSW Aboriginal Land Council",
+   "source_domain": "alc.org.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 390,
+   "title": "Kingfisher Cultural River Cruise named a finalist in the Victorian Tourism Awards",
+   "summary": "Yorta Yorta Nation Aboriginal Corporation (YYNAC) announced that its Kingfisher Cultural River Cruise is a finalist in the Victorian Tourism Awards. The recognition comes less than two years after YYNAC renewed the cruise as a cultural tourism experience that shares Yorta Yorta stories and connection to Country.",
+   "url": "https://yynac.com.au/kingfisher-cultural-river-cruise-named-a-finalist-in-the-victorian-tourism-awards/",
+   "published": "2026-10-19",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Economic",
+    "Values"
+   ],
+   "relevance": "A river tourism business owned by a Nation corporation is being recognised at state level. It is an example of enterprise that depends on a healthy river.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Tourism and Recreation"
+   ],
+   "trends": [
+    "River tourism and heritage investment growing in Basin towns"
+   ],
+   "source": "Yorta Yorta Nation Aboriginal Corporation",
+   "source_domain": "yynac.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 391,
+   "title": "Your Country. Your Voice: Community Weekend at Gunbower Forest",
+   "summary": "YYNAC invited Yorta Yorta families to a weekend on Country at Gunbower Forest on 10 and 11 October 2026. The program covered wetland restoration and monitoring and asked people to contribute their views, with activities for children. Meals, accommodation and buses from Shepparton and Echuca were arranged so people could take part.",
+   "url": "https://yynac.com.au/your-country-your-voice-community-weekend-at-gunbower-forest/",
+   "published": "2026-10-13",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social",
+    "Environmental",
+    "Values"
+   ],
+   "relevance": "Gunbower Forest is a floodplain forest on the Murray. Bringing families onto Country to see restoration and monitoring and to give their views builds community say in how the forest and its wetlands are cared for.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "Yorta Yorta Nation Aboriginal Corporation",
+   "source_domain": "yynac.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 392,
+   "title": "Gellung Warl congratulates Wamba Wemba Aboriginal Corporation on Treaty journey",
+   "summary": "Gellung Warl reports that Wamba Wemba Aboriginal Corporation entered the Treaty Authority's Negotiations Register in August 2026, the eighth Traditional Owner group to do so. This opens the way to form a Treaty Delegation and negotiate with the State of Victoria on land, water, natural resources and economic opportunity. The corporation describes its Country as lands and waters in north-west Victoria and south-west New South Wales, across the Murray River.",
+   "url": "https://gellungwarl.org/news/gellung-warl-congratulates-wamba-wemba-aboriginal-corporation-on-treaty-journey/",
+   "published": "2026-09-24",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "+5yr",
+    "+10yr"
+   ],
+   "steep": [
+    "Political",
+    "Values",
+    "Economic"
+   ],
+   "relevance": "A Traditional Owner treaty negotiation that includes water is now possible for Country on both sides of the Murray. What such a treaty says about water would sit beside the Basin Plan and state water law.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)",
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 393,
+   "title": "Ngarrang Tyerrang Guli: a First Peoples' Institute is established in Victoria",
+   "summary": "Gellung Warl, the First Peoples' representative body established through Treaty in Victoria, announced the establishment of Ngarrang Tyerrang Guli, a self-determined research, education and training institute. It will serve individuals, Traditional Owner groups and Aboriginal community controlled organisations, with a focus on governance, leadership, knowledge systems and economic participation.",
+   "url": "https://gellungwarl.org/news/media-release-ngarrang-tyerrang-guli/",
+   "published": "2026-11-18",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "+5yr",
+    "+10yr"
+   ],
+   "steep": [
+    "Social",
+    "Values",
+    "Economic"
+   ],
+   "relevance": "Traditional Owner corporations in northern Victoria will be able to draw on an institute led by First Peoples for governance and leadership training. Over time that adds to the capacity Nations bring to water, land and enterprise decisions.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)",
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 394,
+   "title": "'Enough is Enough': Gellung Warl statement on Mildura incident",
+   "summary": "Gellung Warl issued a statement after an alleged attack on two Aboriginal children in Mildura, saying its first concern is the wellbeing of the children and their families. It says racist commentary and misinformation followed, asks people to keep to what has been officially reported, and says everyday experiences of racism have increased over the past three years. A Gellung Warl member said the people of Mildura are better than those who seek to create division.",
+   "url": "https://gellungwarl.org/news/enough-is-enough-gellung-warl-statement-on-mildura-incident/",
+   "published": "2026-08-13",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social",
+    "Values"
+   ],
+   "relevance": "Mildura is a Basin hub region. Safety and belonging for Aboriginal children and families are part of the social conditions that any regional plan for the Mallee rests on.",
+   "regions": [
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 395,
+   "title": "AI investment without Traditional Owner agreements isn't in Australia's interests",
+   "summary": "The Federation of Victorian Traditional Owner Corporations says agreement-making with Traditional Owners should be required for investment in data centres and other emerging industries. It notes that data centres draw on land and resources on Traditional Owners' Country and that the federal expectations for such projects, set out in March 2026, are silent on partnership with Traditional Owners. The Federation asks the Australian Government to legislate mandatory agreement-making.",
+   "url": "https://fvtoc.com.au/documents/ai-investment-without-traditional-owner-agreements-isnt-in-australias-interests-15-july-2026/",
+   "published": "2026-07-15",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Technological",
+    "Economic",
+    "Values"
+   ],
+   "relevance": "Data centres need land, energy and water. If they are proposed in the Basin, the question of Traditional Owner agreement will arrive with them.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Data centres arriving in river towns"
+   ],
+   "source": "Federation of Victorian Traditional Owner Corporations",
+   "source_domain": "fvtoc.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 396,
+   "title": "Regional royalties pledge misses economic opportunity without Traditional Owner agreement-making",
+   "summary": "After a Victorian Government election promise to reinvest critical minerals royalties in the regions, the Federation of Victorian Traditional Owner Corporations called for the promised legislation that would give effect to an agreed Traditional Owner benefit-sharing model. The Federation says Traditional Owner Corporations designed the model with the State and are among the largest and fastest-growing employers in their regions. It is concerned that the royalties scheme makes no mention of a Traditional Owner role.",
+   "url": "https://fvtoc.com.au/documents/regional-royalties-pledge-misses-economic-opportunity-without-traditional-owner-agreement-making-11-october-2026/",
+   "published": "2026-10-11",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Economic",
+    "Political"
+   ],
+   "relevance": "Where critical minerals projects are proposed in the Wimmera and Mallee, this legislation would settle how Traditional Owners take part and share in the benefits. The Federation says the legislation has been promised and delayed.",
+   "regions": [
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "A local say and a fair share from energy and mining projects"
+   ],
+   "source": "Federation of Victorian Traditional Owner Corporations",
+   "source_domain": "fvtoc.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 397,
+   "title": "Our Children are the Treaty generation",
+   "summary": "Writing for IndigenousX on Aboriginal and Torres Strait Islander Children's Day, Sheree Lowe describes Aboriginal children in Victoria as the first generation growing up in the State's Treaty era. She argues the test of Treaty is whether children grow up healthier, strong in identity and culture, and with decisions about their future made closer to their own communities.",
+   "url": "https://indigenousx.com.au/our-children-are-the-treaty-generation/",
+   "published": "2026-08-04",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "+10yr",
+    "+20yr"
+   ],
+   "steep": [
+    "Social",
+    "Values"
+   ],
+   "relevance": "Many of these children live in the Basin's Victorian towns. The piece sets a long-run measure for the Treaty era that regional planning can adopt: what changes for children.",
+   "regions": [
+    "Murray Riverina (NSW-Victoria border)",
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations-led plans and rights for water and Country"
+   ],
+   "source": "IndigenousX",
+   "source_domain": "indigenousx.com.au",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 398,
+   "title": "Avian Influenza (Bird Flu): What ACCHOs and Communities Need to Know",
+   "summary": "The Aboriginal Health & Medical Research Council (AH&MRC) published guidance for Aboriginal community controlled health organisations on H5 bird flu. It reports 28 confirmed detections in wild seabirds across five states by 30 July 2026, two of them in NSW, and says the risk to people remains low. It notes that many bird species are closely connected to Country, culture and community wellbeing, and that rangers, hunters and wildlife carers who handle sick or dead birds are at higher risk.",
+   "url": "https://www.ahmrc.org.au/avian-influenza-bird-flu-what-acchos-and-communities-need-to-know/",
+   "published": "2026-07-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social",
+    "Environmental"
+   ],
+   "relevance": "Basin wetlands hold large waterbird populations, and Aboriginal rangers and families spend time on them. Health services run by Aboriginal communities are a trusted channel for bird flu advice that wetland planning in the Basin can work with.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)",
+    "Murray Riverina (NSW-Victoria border)",
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Emerging H5N1 wildlife-disease risk spreading through Basin wetlands"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 399,
+   "title": "Goondir Health Services Report Card 2025-26",
+   "summary": "Goondir Health Services, which runs clinics in Dalby, St George, Oakey and Chinchilla, published its report card for 2025-26. It reports $2.9 million in Australian Government funding for a new Oakey Primary Health Centre, with land and $300,000 from Goondir, and a sod-turning ceremony in January 2026. It also reports on its virtual health and mobile clinic services, and names recruiting and keeping skilled staff, including Aboriginal and Torres Strait Islander staff, as a continuing challenge.",
+   "url": "https://www.goondir.org.au/wp-content/uploads/2026/11/Goondir-Report-Card-2025-26-1.pdf",
+   "published": "2026-11-23",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Social",
+    "Technological"
+   ],
+   "relevance": "Goondir serves towns in the Queensland part of the Basin, including St George. Its report shows a health service for Aboriginal and Torres Strait Islander people investing in new facilities and virtual care while staff remain hard to find.",
+   "regions": [
+    "Northern Basin (Queensland)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 400,
+   "title": "Clean energy system to strengthen local Indigenous community",
+   "summary": "The Indigenous Land and Sea Corporation is funding a 17 kilowatt solar, battery and backup generator system at Mawonga, a 22,373 hectare property at Roto in central-western NSW owned by Winangakirri Aboriginal Corporation. The property is 80 kilometres from the nearest town and relies heavily on diesel. The corporation expects to save almost $20,000 a year on diesel and put it into land management, including its five-person ranger program.",
+   "url": "https://www.ilsc.gov.au/news/clean-energy-system-strengthen-local-indigenous-community",
+   "published": "2026-09-21",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Technological",
+    "Environmental",
+    "Economic"
+   ],
+   "relevance": "Mawonga is an Indigenous Protected Area in central-western NSW, within the Basin. Reliable off-grid power keeps a remote ranger base working through extreme heat and lowers its running costs.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "Indigenous Land and Sea Corporation",
+   "source_domain": "ilsc.gov.au",
+   "voice": "Government",
+   "tier": 1
+  },
+  {
+   "id": 418,
+   "title": "SANTS News, June 2026: Water Act review session for First Nations people planned for Berri is cancelled",
+   "summary": "SA Native Title Services told native title holders that First Nations engagement for the independent review of the Water Act 2007 would include a South Australian session in Port Adelaide on 6 July 2026, and noted that the session planned for Berri had been cancelled. The review is looking at how the Act can better reflect the United Nations Declaration on the Rights of Indigenous Peoples, with a final report due by 28 February 2027.",
+   "url": "https://www.nativetitlesa.org/sants-news-june-2026/",
+   "published": "2026-07-03",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Blind Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Political",
+    "Values"
+   ],
+   "relevance": "The Water Act underpins the Basin Plan, and River Murray Nations have direct interests in how it treats cultural, social and economic water. Without a session on the river in South Australia, people from the Riverland and Murraylands had further to travel to take part.",
+   "regions": [
+    "South Australian Murray"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Growing recognition of First Nations water rights through the Aboriginal Water Entitlements Program"
+   ],
+   "source": "SA Native Title Services",
+   "source_domain": "nativetitlesa.org",
+   "voice": "First Nations organisations and media",
+   "tier": 1
+  },
+  {
+   "id": 421,
+   "title": "Paving the Way for Aboriginal Community-Controlled Housing in the Mallee",
+   "summary": "Mallee District Aboriginal Services has been registered as a housing provider under Victoria's Housing Act, which lets it manage its own properties for community members. Members voted in early November 2026 to change the organisation's constitution to make this possible. The organisation says housing shaped by Aboriginal people supports health, education, work and connection to family and culture across Mildura, Swan Hill, Kerang and the wider Mallee.",
+   "url": "https://www.mdas.org.au/files/latest-news/mdas-paving-the-way-for-aboriginal-community-controlled-housing-in-the-mallee.pdf",
+   "published": "2026-11-24",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr",
+    "+10yr"
+   ],
+   "steep": [
+    "Social",
+    "Values"
+   ],
+   "relevance": "Housing is tight across the Mallee's river towns, and this places housing decisions for Aboriginal families with a local community-controlled organisation. It is an example of self-determination delivered through a practical service.",
+   "regions": [
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 422,
+   "title": "MDAS Responds to Community Incident, Calls for Stronger Collaboration Across Youth Services",
+   "summary": "After an incident in early August 2026 that affected two young people and their families, Mallee District Aboriginal Services opened its doors with counsellors on site and called meetings with members, partner agencies and the community. It says engagement from the wider youth service system was inconsistent and asks for steadier collaboration so that no family is left without support in a crisis. It also asks everyone to respond with care and respect after a wave of hurtful commentary online.",
+   "url": "https://www.mdas.org.au/files/latest-news/mdas-responds-to-community-incident.pdf",
+   "published": "2026-08-12",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Action Priority",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Social",
+    "Values"
+   ],
+   "relevance": "How services work together around young people, and how a community talks about itself online after a distressing event, shape trust and belonging in Basin towns. This is the organisation's own account and its own request.",
+   "regions": [
+    "Wimmera-Mallee (Victoria)"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "Young people, training and the workers towns need"
+   ],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 435,
+   "title": "Moree residents put privacy and oversight questions to police about the town's drone program",
+   "summary": "Moree Online News collected residents' questions and put them to NSW Police at an information session on 11 November 2026 about the POLAIR Remote trial. Two drones on the roof of Moree police station are flown by pilots at Bankstown and can be sent to triple-zero calls ahead of officers. Police said cameras record only when evidence or public safety requires it, while the Aboriginal Legal Service NSW/ACT questioned the consultation with Aboriginal communities and other residents supported keeping the drones.",
+   "url": "https://moreeonlinenews.com.au/2026/11/16/inside-moree-s-police-drone-operation-what-we-learned/",
+   "published": "2026-11-16",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Technological",
+    "Values",
+    "Social"
+   ],
+   "relevance": "Moree is a hub town of the Gwydir valley and is hosting a trial of remotely piloted police drones, so it is a test of how a regional community weighs safety against surveillance. The same questions will follow if the technology spreads to other Basin towns.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "Trust, fairness and who decides"
+   ],
+   "source": "Moree Online News",
+   "source_domain": "moreeonlinenews.com.au",
+   "voice": "Regional, rural and local news",
+   "tier": 2
+  },
+  {
+   "id": 436,
+   "title": "Moree-born Ian Brown becomes chief executive of Just Reinvest NSW and floats a youth leadership group for Moree",
+   "summary": "Ian Brown, a Gomeroi man who joined Just Reinvest's first local Aboriginal leadership group in Moree around 2022, took up the statewide chief executive role on 2 November 2026. He told Moree Online News that some Just Reinvest activities in Moree now overlap with programs run through the NSW Premier's Department, and that he wants organisations to work together and build on what is already happening. One idea being explored is a youth leadership group that gives young people a regular say with community organisations and government agencies.",
+   "url": "https://moreeonlinenews.com.au/2026/11/13/from-moree-to-the-top-job-at-just-reinvest-nsw/",
+   "published": "2026-11-13",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Social",
+    "Values"
+   ],
+   "relevance": "Moree is one of the larger towns of the northern Basin, and community safety and opportunities for young people bear on who stays and who leaves. Locally governed, community-led programs are an approach other Basin towns can learn from.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "Young people, training and the workers towns need"
+   ],
+   "source": "Moree Online News",
+   "source_domain": "moreeonlinenews.com.au",
+   "voice": "Regional, rural and local news",
+   "tier": 2
+  },
+  {
+   "id": 444,
+   "title": "NSW offers about 130 surrendered water licences to Aboriginal organisations one year into its Aboriginal Water Strategy",
+   "summary": "One year after launching its first Aboriginal Water Strategy, the NSW Government reports that around 130 water licences, amounting to about 8,250 shares surrendered to the Minister over many years, have been offered to about 35 Aboriginal organisations. It also issued 121 Aboriginal cultural water licences of up to 10 megalitres each, taking the total to 127. The 2026 Budget committed $10.7 million over two years to carry the strategy out.",
+   "url": "https://www.water.dcceew.nsw.gov.au/news/more-water-flowing-aboriginal-hands-one-year-historic-strategy",
+   "published": "2026-10-29",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Economic",
+    "Values"
+   ],
+   "relevance": "The process puts water entitlements into Aboriginal ownership across NSW, including the Basin valleys. It adds a state pathway beside the Commonwealth's Aboriginal Water Entitlements Program.",
+   "regions": [
+    "Central Murrumbidgee-Lachlan (NSW)",
+    "Murray Riverina (NSW-Victoria border)",
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Growing recognition of First Nations water rights through the Aboriginal Water Entitlements Program"
+   ],
+   "source": "NSW Department of Climate Change, Energy, the Environment and Water: Water",
+   "source_domain": "water.dcceew.nsw.gov.au",
+   "voice": "Government",
+   "tier": 1
+  },
+  {
+   "id": 451,
+   "title": "Moree unveils a Blue Plaque marking the 1965 Freedom Ride at the Memorial Hall",
+   "summary": "Moree Plains Shire Council unveiled a NSW Blue Plaque on 13 August 2026 recognising Moree's place in the 1965 Freedom Ride. A Moree Elder unveiled the plaque after a smoking ceremony and a Welcome to Country, with councillors, the Moree Local Aboriginal Land Council and Elders present. A shared lunch followed, where people reflected on what the Freedom Ride meant.",
+   "url": "https://www.netimes.com.au/2026/08/16/moree-plains-unveils-freedom-ride-blue-plaque/",
+   "published": "2026-08-16",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Values",
+    "Social"
+   ],
+   "relevance": "It shows a northern Basin town publicly marking a significant part of its history, with council and Elders doing so together. How a community holds its history shapes trust and belonging, and those shape regional decisions.",
+   "regions": [
+    "Northern NSW Catchments"
+   ],
+   "scope": "Basin region",
+   "sectors": [],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "New England Times",
+   "source_domain": "netimes.com.au",
+   "voice": "Regional, rural and local news",
+   "tier": 2
+  },
+  {
+   "id": 464,
+   "title": "Drone project for First Nations businesses presented at the Maranoa and South West Indigenous Business Expo",
+   "summary": "Southern Queensland Landscapes reports that it presented at the Maranoa and South West Indigenous Business Expo in Roma in April 2026. Its projects officer described the Wandhala Drone Project, which supports First Nations business participants to explore drones for land management, cultural heritage monitoring and small business. The organisation says working alongside Traditional Owners and Indigenous businesses is a priority in how it plans and delivers projects.",
+   "url": "https://www.sqlandscapes.org.au/strengthening-partnerships-at-the-2026-maranoa-and-south-west-indigenous-business-expo",
+   "published": "2026-05-07",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Bright Spot",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Technological",
+    "Social"
+   ],
+   "relevance": "It shows First Nations businesses in the Maranoa and south-west taking up new land management technology with the regional natural resource body. Partnerships of this kind widen who does paid land and water work in the Queensland Basin.",
+   "regions": [
+    "Northern Basin (Queensland)"
+   ],
+   "scope": "Basin region",
+   "sectors": [
+    "First Nations Water and Land Enterprises"
+   ],
+   "trends": [
+    "First Nations organisations building services, businesses and partnerships"
+   ],
+   "source": "Southern Queensland Landscapes",
+   "source_domain": "sqlandscapes.org.au",
+   "voice": "Environment and conservation",
+   "tier": 1
+  },
+  {
+   "id": 469,
+   "title": "Water Act review releases interim report with 39 draft recommendations for consultation",
+   "summary": "The independent review of the Water Act 2007 opened consultation on its Interim Report on 4 November 2026, with submissions closing on 17 December 2026 and a final report due to government by 28 February 2027. It finds the Act's overall design broadly sound and puts forward 39 draft recommendations for testing. They include writing adaptive management and climate change into the objects, giving the Inspector-General access to state compliance data and models, creating an Office of Cultural Water and a First Nations Water Council, and resetting the approach to constraints.",
+   "url": "https://consult.dcceew.gov.au/water-act-review",
+   "published": "2026-11-04",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Political",
+    "Values"
+   ],
+   "relevance": "The Act is the legal base for the Basin Plan, the MDBA, the Commonwealth Environmental Water Holder and the Inspector-General, so changes to it set the rules for every later Basin decision. Governments will consider it alongside the Basin Plan Review.",
+   "regions": [],
+   "scope": "Whole of Basin",
+   "sectors": [
+    "First Nations Water and Land Enterprises",
+    "Government and Natural Resource Management"
+   ],
+   "trends": [
+    "Independent compliance oversight strengthening amid a 2026 statutory review"
+   ],
+   "source": "Department of Climate Change, Energy, the Environment and Water, including the Commonwealth Environmental Water Holder",
+   "source_domain": "dcceew.gov.au",
+   "voice": "Government",
+   "tier": 1
+  },
+  {
+   "id": 472,
+   "title": "Environment and science groups call for water recovery to close the SDL adjustment shortfall",
+   "summary": "In a joint submission published on 30 October 2026, Environmental Justice Australia and the Wentworth Group of Concerned Scientists said the shortfall in offset projects was foreseeable. They ask governments to lower extraction limits and recover water, including through voluntary purchases, and to stop further delay and new offset projects. They also want projects reassessed against field evidence, faster removal of delivery barriers, Traditional Owner consent, and Basin states to carry the cost of failed projects.",
+   "url": "https://envirojustice.org.au/publication/submission-to-the-murray-darling-basin-authority-on-the-sdlam-draft-determination-report/",
+   "published": "2026-10-30",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now"
+   ],
+   "steep": [
+    "Political",
+    "Environmental",
+    "Values"
+   ],
+   "relevance": "The submission sets out one of the main positions before the Minister, who receives the final determination by 31 December 2026. Irrigator groups have asked for the opposite, so it shows how far apart views on closing the 265 GL gap remain.",
+   "regions": [],
+   "scope": "Whole of Basin",
+   "sectors": [
+    "Government and Natural Resource Management"
+   ],
+   "trends": [],
+   "source": "",
+   "source_domain": "",
+   "voice": "",
+   "tier": null
+  },
+  {
+   "id": 487,
+   "title": "NSW releases unassigned groundwater shares in 37 water sources by tender",
+   "summary": "NSW announced on 16 November 2026 that farmers and regional businesses can bid for new groundwater entitlements in 37 groundwater sources under a controlled allocation order made on 13 November. Registrations of interest close on 18 December 2026, shares go to the highest bids above a minimum price, and buyers still need separate approval to pump. Sources with little unassigned water or with commitments above half the extraction limit were left out, and part of the unassigned water is held back for future needs, including Aboriginal ownership.",
+   "url": "https://www.water.dcceew.nsw.gov.au/news/groundwater-shares-available-support-nsw-farmers-and-businesses",
+   "published": "2026-11-16",
+   "harvested": "2026-11-24 00:00:00+00:00",
+   "valence": "Critical Uncertainty",
+   "horizon": [
+    "Now",
+    "+5yr"
+   ],
+   "steep": [
+    "Economic",
+    "Political"
+   ],
+   "relevance": "New groundwater entitlements offer drought cover for inland farms at a time of high surface water prices, within existing extraction limits. The department says about 1 million megalitres of unassigned groundwater sits across 67 coastal and inland sources, and the pages read did not list which of the 37 are in the Basin.",
+   "regions": [],
+   "scope": "Australia",
+   "sectors": [
+    "Government and Natural Resource Management",
+    "Water Utilities, Trading and Management"
+   ],
+   "trends": [],
+   "source": "NSW Department of Climate Change, Energy, the Environment and Water: Water",
+   "source_domain": "water.dcceew.nsw.gov.au",
+   "voice": "Government",
+   "tier": 1
   }
  ]
 }

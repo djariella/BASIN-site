@@ -16,6 +16,8 @@ This repository holds one web page and one data file. Together they are the publ
 | `scripts/export_signals.py` | Reads approved signals from the database and writes the data file. |
 | `.github/workflows/update-signals.yml` | Runs the export every hour and saves the file if it changed. It can also be started by hand from the Actions tab. |
 
+The page holds one setting for the pilot's next step: `CONTRIBUTE_URL`, at the top of the script in `index.html`. Put the https:// address of the shared "add what you are noticing" form there and the page shows the invitation; leave it empty and the page says adding is not open yet. Anything else — spaces around it, or a value not starting with `https://` followed by a host — is ignored.
+
 ## How it stays current
 
 1. Overnight, the scan in the private repository adds new signals to the BASIN database, marked for review.

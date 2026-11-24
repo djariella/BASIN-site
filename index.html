@@ -228,6 +228,8 @@
     .node { gap:.25rem; padding:.15rem .1rem; } .node span { font-size:.82rem; } .node em { width:22px; } .node b { display:none; }
   }
   @media (prefers-reduced-motion:reduce) { .sysmap path, .node { transition:none; } }
+  footer .add { border:1px solid #fff; background:none; color:#fff; border-radius:999px; padding:.55rem 1.2rem;
+               margin-top:.7rem; font-weight:500; text-decoration:none; display:inline-block; }
 </style>
 </head>
 <body>
@@ -317,7 +319,7 @@
 
 <footer><div class="wrap cols">
   <div><h2>How this works</h2><p>BASIN gathers evidence of what is changing from public sources, so people across the Basin can decide with better information. Anything the nightly scan finds is held for a person to check before it appears here. Each entry is a headline, a link and our own short summary. The original belongs to its publisher.</p></div>
-  <div><h2>Add what you are noticing</h2><p>Adding your own signals is the next part of this pilot. It is not open yet.</p></div>
+  <div><h2>Add what you are noticing</h2><div id="contribute"><p>Adding your own signals is the next part of this pilot. It is not open yet.</p></div></div>
   <div><h2>About</h2><p>A pilot by the One Basin CRC. This is a working prototype and will change.</p><p id="updated"></p></div>
 </div></footer>
 
@@ -325,6 +327,9 @@
 
 <script>
 "use strict";
+/* Where visitors add their own signals: the https:// address of the shared form.
+   Leave it empty and the page keeps saying that adding is not open yet. */
+const CONTRIBUTE_URL = "";
 const PAGE = 30;
 let all = [], shown = PAGE, trendNotes = new Map(), allTrends = false, panel = false;
 let issues = [], forces = [], forceNotes = new Map();   // the Basin issues and the big forces behind them
@@ -775,6 +780,20 @@ fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data 
   $("updated").textContent = "Signals last changed on " + (niceDate(data.generated, true) || "a date not yet recorded") + ".";
   readAddress(); update();
 }).catch(() => { $("lede").textContent = "The signals could not be loaded. Please try again shortly."; });
+
+/* The invitation to add a signal, shown only while CONTRIBUTE_URL holds an https:// address
+   with a host after the scheme. Anything else is ignored, so a bad value never shows a link. */
+const contributeUrl = String(CONTRIBUTE_URL).trim();
+const contributeHolder = $("contribute");
+if (contributeHolder && /^https:\/\/[^/\s]/.test(contributeUrl)) {
+  const addForm = el("a", "add", "Add a signal");
+  addForm.href = contributeUrl; addForm.target = "_blank"; addForm.rel = "noopener noreferrer";
+  contributeHolder.replaceChildren(
+    el("p", "", "Noticed something changing in the Basin? Tell us."),
+    addForm,
+    el("p", "", "Every contribution is checked by a person before it appears here.")
+  );
+}
 
 $("q").addEventListener("input", () => choose({ q: $("q").value.trim() }));
 $("more").addEventListener("click", () => { shown += PAGE; drawList(); });

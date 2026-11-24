@@ -11,7 +11,10 @@ What it exports
 ---------------
 Only signals whose RoutingStatus is "Approved": the ones a person has checked.
 For each: title, our summary, link, dates, lenses, kind, horizon, regions,
-sectors, and the source's name, voice and tier. Nothing else leaves the database.
+geographic scope, sectors, and the source's name, voice and tier.
+
+Every signal should have a place: one or more regions, or a wider scope (Whole of
+Basin, Australia, Asia-Pacific or Global). The export warns about any that has neither. Nothing else leaves the database.
 
 Running it
 ----------
@@ -108,7 +111,7 @@ def main() -> int:
         return 0
     signals = rows(f"/api/v2/tables/{TABLES['signals']}/records", token,
                    where="(RoutingStatus,eq,Approved)",
-                   fields="Id,Title,Summary,URL,PublishedDate,HarvestedDate,Valence,Horizon,SteepTags,BasinRelevance")
+                   fields="Id,Title,Summary,URL,PublishedDate,HarvestedDate,Valence,Horizon,SteepTags,BasinRelevance,GeographicScope")
     sources = rows(f"/api/v2/tables/{TABLES['sources']}/records", token, fields="Domain,Name,Tier,Voice")
     regions, sectors = names_by_signal("regions", token), names_by_signal("sectors", token)
     out = []
@@ -120,9 +123,14 @@ def main() -> int:
             "harvested": signal.get("HarvestedDate"), "valence": signal.get("Valence") or "",
             "horizon": as_list(signal.get("Horizon")), "steep": as_list(signal.get("SteepTags")),
             "relevance": signal.get("BasinRelevance") or "",
-            "regions": sorted(regions.get(signal["Id"], [])), "sectors": sorted(sectors.get(signal["Id"], [])),
+            "regions": sorted(regions.get(signal["Id"], [])), "scope": signal.get("GeographicScope") or "",
+            "sectors": sorted(sectors.get(signal["Id"], [])),
             "source": source.get("Name") or "", "voice": source.get("Voice") or "", "tier": source.get("Tier"),
         })
+    no_place = [item["id"] for item in out if not item["regions"] and item["scope"] in ("", "Basin region")]
+    if no_place:
+        print(f"WARNING: {len(no_place)} approved signals have no place. Their ids: {no_place}. "
+              "Set GeographicScope or a region for each one in the Signals table.")
     if published_signals() == out:
         print(f"No change: the same {len(out)} approved signals are already on the site.")
         return 0

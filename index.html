@@ -66,7 +66,7 @@
     <section aria-label="Signals">
       <div class="filters">
         <div><label for="q">Search</label><input id="q" type="search" placeholder="A word or phrase"></div>
-        <div><label for="region">Region</label><select id="region"><option value="">All regions</option></select></div>
+        <div><label for="region">Place</label><select id="region"><option value="">All places</option></select></div>
         <div><label for="lens">Lens</label><select id="lens"><option value="">All lenses</option></select></div>
         <div><label for="voice">Voice</label><select id="voice"><option value="">All voices</option></select></div>
         <div><label for="valence">Kind of signal</label><select id="valence"><option value="">All kinds</option></select></div>
@@ -103,6 +103,15 @@ function niceDate(iso) {
   const d = new Date(iso);
   return isNaN(d) ? "" : d.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
 }
+// Every signal has a place: its Basin regions, or else the wider scope it is about.
+// A signal with neither is shown as "Place not recorded" so that nothing is hidden by the filter.
+const WIDER = ["Whole of Basin", "Australia", "Asia-Pacific", "Global"];
+const NO_PLACE = "Place not recorded";
+function places(s) {
+  const found = [...(s.regions || [])];
+  if (WIDER.includes(s.scope)) found.push(s.scope);
+  return found.length ? found : [NO_PLACE];
+}
 function tally(list, pick) {
   const counts = new Map();
   for (const s of list) for (const v of [].concat(pick(s) || [])) if (v) counts.set(v, (counts.get(v) || 0) + 1);
@@ -126,7 +135,7 @@ function matches(s) {
   const q = $("q").value.trim().toLowerCase();
   const hay = (s.title + " " + s.summary + " " + (s.relevance || "") + " " + (s.source || "")).toLowerCase();
   return (!q || hay.includes(q))
-    && (!$("region").value || (s.regions || []).includes($("region").value))
+    && (!$("region").value || places(s).includes($("region").value))
     && (!$("lens").value || (s.steep || []).includes($("lens").value))
     && (!$("voice").value || s.voice === $("voice").value)
     && (!$("valence").value || s.valence === $("valence").value);
@@ -141,7 +150,7 @@ function card(s) {
   box.appendChild(el("p", "", s.summary));
   if (s.relevance) box.appendChild(el("p", "why", "Why it matters for the Basin: " + s.relevance));
   const tags = el("div", "tags");
-  for (const r of s.regions || []) tags.appendChild(el("span", "tag region", r));
+  for (const r of places(s)) tags.appendChild(el("span", "tag region", r));
   for (const t of s.steep || []) tags.appendChild(el("span", "tag", t));
   if (s.valence) tags.appendChild(el("span", "tag plain", s.valence));
   for (const hz of s.horizon || []) tags.appendChild(el("span", "tag plain", hz));
@@ -157,7 +166,9 @@ function render() {
 fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data => {
   all = (data.signals || []).sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
   const regions = tally(all, s => s.regions), lenses = tally(all, s => s.steep), voices = tally(all, s => s.voice);
-  fillSelect("region", regions); fillSelect("lens", lenses); fillSelect("voice", voices); fillSelect("valence", tally(all, s => s.valence));
+  const wider = tally(all, s => places(s).filter(p => !(s.regions || []).includes(p)));
+  const widerInOrder = [...WIDER, NO_PLACE].filter(name => wider.some(([n]) => n === name)).map(name => [name]);
+  fillSelect("region", [...regions, ...widerInOrder]); fillSelect("lens", lenses); fillSelect("voice", voices); fillSelect("valence", tally(all, s => s.valence));
   const stats = [[all.length, "signals"], [regions.length, "Basin regions"],
                  [new Set(all.map(s => s.source).filter(Boolean)).size, "sources"], [voices.length, "kinds of voice"]];
   $("stats").replaceChildren(...stats.map(([n, t]) => { const d = el("div", "stat"); d.appendChild(el("b", "", n)); d.appendChild(el("span", "", t)); return d; }));

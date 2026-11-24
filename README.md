@@ -43,3 +43,4 @@ The export needs `NOCODB_TOKEN`, saved under Settings, Secrets and variables, Ac
 - No password, key or token is ever committed here.
 - The page shows every piece of text as plain text, never as HTML.
 - Only approved signals are exported: a headline, a link, dates, tags and our own short summary.
+- Every signal has a place: one or more of the six Basin regions, or Whole of Basin, Australia, Asia-Pacific or Global. The Place filter lists them all. A signal with no place would show as "Place not recorded", and the export warns about it.

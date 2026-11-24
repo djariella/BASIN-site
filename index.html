@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BASIN: signals from the Murray-Darling Basin</title>
+<!--
+  BASIN pilot explorer. One self-contained page.
+  It reads data/signals.json, which a scheduled job refreshes from the BASIN database.
+  Every piece of text from the data is written with textContent, never as HTML,
+  and a link is shown only if it starts with http:// or https://.
+-->
+<style>
+  :root { --ink:#1d2b2f; --muted:#5d6f73; --line:#d9e0dd; --paper:#f7f5ef; --card:#ffffff;
+          --river:#1f5d63; --river-soft:#e3efee; --ochre:#b5651d; --ochre-soft:#f6e9db; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--paper); }
+  a { color:var(--river); }
+  header { background:var(--river); color:#fff; padding:2.2rem 1.25rem 1.8rem; }
+  .wrap { max-width:1080px; margin:0 auto; }
+  header h1 { margin:0 0 .35rem; font-size:2rem; letter-spacing:.01em; }
+  header p { margin:0; max-width:46rem; color:#dcebea; }
+  .pilot { display:inline-block; margin-bottom:.9rem; padding:.15rem .6rem; border:1px solid #9cc4c2; border-radius:999px; font-size:.8rem; color:#dcebea; }
+  main { padding:1.25rem; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.75rem; margin:0 0 1.25rem; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:.8rem 1rem; }
+  .stat b { display:block; font-size:1.6rem; color:var(--river); }
+  .stat span { color:var(--muted); font-size:.9rem; }
+  .layout { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:1.25rem; align-items:start; }
+  @media (max-width:860px) { .layout { grid-template-columns:1fr; } }
+  .filters { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1rem; margin-bottom:1rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:.75rem; }
+  label { display:block; font-size:.85rem; color:var(--muted); margin-bottom:.2rem; }
+  input, select { width:100%; padding:.5rem .6rem; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; color:var(--ink); }
+  input:focus, select:focus, button:focus { outline:3px solid #9cc4c2; outline-offset:1px; }
+  .count { color:var(--muted); margin:.25rem 0 .75rem; }
+  .signal { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1rem 1.1rem; margin-bottom:.75rem; }
+  .signal h2 { margin:0 0 .25rem; font-size:1.08rem; line-height:1.35; }
+  .meta { color:var(--muted); font-size:.88rem; margin-bottom:.5rem; }
+  .signal p { margin:.35rem 0; }
+  .why { color:var(--muted); }
+  .tags { margin-top:.55rem; display:flex; flex-wrap:wrap; gap:.35rem; }
+  .tag { font-size:.8rem; padding:.12rem .55rem; border-radius:999px; background:var(--river-soft); color:var(--river); }
+  .tag.region { background:var(--ochre-soft); color:var(--ochre); }
+  .tag.plain { background:#eef0ee; color:var(--muted); }
+  aside .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1rem; margin-bottom:1rem; }
+  aside h3 { margin:0 0 .6rem; font-size:1rem; }
+  .bar { margin:.4rem 0; font-size:.88rem; }
+  .bar .track { height:8px; background:#eef0ee; border-radius:999px; overflow:hidden; margin-top:.15rem; }
+  .bar .fill { height:100%; background:var(--river); }
+  .bar.thin .fill { background:var(--ochre); }
+  .note { color:var(--muted); font-size:.88rem; }
+  button.more { display:block; margin:1rem auto; padding:.6rem 1.2rem; border:1px solid var(--river); border-radius:8px; background:#fff; color:var(--river); font:inherit; cursor:pointer; }
+  footer { padding:1.5rem 1.25rem 2.5rem; color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="pilot">Pilot, in development</span>
+  <h1>BASIN</h1>
+  <p>Signals of change from across the Murray-Darling Basin, gathered from public sources and checked by a person before they appear here. A pilot by the One Basin CRC.</p>
+</div></header>
+<main><div class="wrap">
+  <div class="stats" id="stats" aria-live="polite"></div>
+  <div class="layout">
+    <section aria-label="Signals">
+      <div class="filters">
+        <div><label for="q">Search</label><input id="q" type="search" placeholder="A word or phrase"></div>
+        <div><label for="region">Region</label><select id="region"><option value="">All regions</option></select></div>
+        <div><label for="lens">Lens</label><select id="lens"><option value="">All lenses</option></select></div>
+        <div><label for="voice">Voice</label><select id="voice"><option value="">All voices</option></select></div>
+        <div><label for="valence">Kind of signal</label><select id="valence"><option value="">All kinds</option></select></div>
+      </div>
+      <p class="count" id="count" aria-live="polite">Loading signals.</p>
+      <div id="list"></div>
+      <button class="more" id="more" hidden>Show more</button>
+    </section>
+    <aside>
+      <div class="panel"><h3>Where the signals come from</h3><div id="byVoice"></div>
+        <p class="note">A short bar means few signals from that voice so far. It does not mean that voice has little to say.</p></div>
+      <div class="panel"><h3>Signals by lens</h3><div id="byLens"></div>
+        <p class="note">The six lenses are Social, Technological, Economic, Environmental, Political and Values.</p></div>
+      <div class="panel"><h3>Add what you are noticing</h3>
+        <p class="note">Adding your own signals is the next part of this pilot. It is not open yet.</p></div>
+    </aside>
+  </div>
+</div></main>
+<footer><div class="wrap" id="foot"></div></footer>
+<script>
+"use strict";
+const PAGE = 25;
+let all = [], shown = PAGE;
+const $ = id => document.getElementById(id);
+
+function el(tag, cls, text) {               // build an element with text, never HTML
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined && text !== null) node.textContent = String(text);
+  return node;
+}
+function safeLink(url) { return /^https?:\/\//i.test(url || "") ? url : ""; }
+function niceDate(iso) {
+  const d = new Date(iso);
+  return isNaN(d) ? "" : d.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+}
+function tally(list, pick) {
+  const counts = new Map();
+  for (const s of list) for (const v of [].concat(pick(s) || [])) if (v) counts.set(v, (counts.get(v) || 0) + 1);
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+}
+function fillSelect(id, values) {
+  for (const [v] of values) { const o = el("option", "", v); o.value = v; $(id).appendChild(o); }
+}
+function bars(id, rows, total) {
+  const box = $(id); box.replaceChildren();
+  const top = rows.length ? rows[0][1] : 1;
+  for (const [name, n] of rows) {
+    const row = el("div", "bar" + (n / total < 0.05 ? " thin" : ""));
+    row.appendChild(el("div", "", name + ": " + n));
+    const track = el("div", "track"), fill = el("div", "fill");
+    fill.style.width = Math.max(2, Math.round(100 * n / top)) + "%";
+    track.appendChild(fill); row.appendChild(track); box.appendChild(row);
+  }
+}
+function matches(s) {
+  const q = $("q").value.trim().toLowerCase();
+  const hay = (s.title + " " + s.summary + " " + (s.relevance || "") + " " + (s.source || "")).toLowerCase();
+  return (!q || hay.includes(q))
+    && (!$("region").value || (s.regions || []).includes($("region").value))
+    && (!$("lens").value || (s.steep || []).includes($("lens").value))
+    && (!$("voice").value || s.voice === $("voice").value)
+    && (!$("valence").value || s.valence === $("valence").value);
+}
+function card(s) {
+  const box = el("article", "signal");
+  const h = el("h2"); const url = safeLink(s.url);
+  if (url) { const a = el("a", "", s.title); a.href = url; a.rel = "noopener noreferrer"; a.target = "_blank"; h.appendChild(a); }
+  else h.textContent = s.title;
+  box.appendChild(h);
+  box.appendChild(el("div", "meta", [s.source, niceDate(s.published)].filter(Boolean).join(" · ")));
+  box.appendChild(el("p", "", s.summary));
+  if (s.relevance) box.appendChild(el("p", "why", "Why it matters for the Basin: " + s.relevance));
+  const tags = el("div", "tags");
+  for (const r of s.regions || []) tags.appendChild(el("span", "tag region", r));
+  for (const t of s.steep || []) tags.appendChild(el("span", "tag", t));
+  if (s.valence) tags.appendChild(el("span", "tag plain", s.valence));
+  for (const hz of s.horizon || []) tags.appendChild(el("span", "tag plain", hz));
+  box.appendChild(tags);
+  return box;
+}
+function render() {
+  const hits = all.filter(matches);
+  $("count").textContent = hits.length === all.length ? all.length + " signals" : hits.length + " of " + all.length + " signals";
+  $("list").replaceChildren(...hits.slice(0, shown).map(card));
+  $("more").hidden = hits.length <= shown;
+}
+fetch("data/signals.json", { cache: "no-store" }).then(r => r.json()).then(data => {
+  all = (data.signals || []).sort((a, b) => String(b.published || "").localeCompare(String(a.published || "")));
+  const regions = tally(all, s => s.regions), lenses = tally(all, s => s.steep), voices = tally(all, s => s.voice);
+  fillSelect("region", regions); fillSelect("lens", lenses); fillSelect("voice", voices); fillSelect("valence", tally(all, s => s.valence));
+  const stats = [[all.length, "signals checked by a person"], [regions.length, "Basin regions"],
+                 [new Set(all.map(s => s.source).filter(Boolean)).size, "sources"], [voices.length, "kinds of voice"]];
+  $("stats").replaceChildren(...stats.map(([n, t]) => { const d = el("div", "stat"); d.appendChild(el("b", "", n)); d.appendChild(el("span", "", t)); return d; }));
+  bars("byVoice", voices, all.length || 1); bars("byLens", lenses, all.length || 1);
+  $("foot").textContent = "Last updated " + (niceDate(data.generated) || "not yet") +
+    ". Each entry is a headline, a link and our own short summary. The original belongs to its publisher. " +
+    "This is a working prototype and will change.";
+  render();
+}).catch(() => { $("count").textContent = "The signals could not be loaded. Please try again shortly."; });
+for (const id of ["q", "region", "lens", "voice", "valence"]) $(id).addEventListener("input", () => { shown = PAGE; render(); });
+$("more").addEventListener("click", () => { shown += PAGE; render(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+# Refreshes data/signals.json from the BASIN database, so the website stays current.
+#
+# One secret must exist in this repository (Settings, Secrets and variables, Actions):
+#   NOCODB_TOKEN   a NocoDB token for the BASIN scan account
+# Until it exists this job runs, says so, and changes nothing.
+
+name: Update signals
+
+on:
+  workflow_dispatch:           # the "Run workflow" button
+  schedule:
+    - cron: "17 * * * *"       # every hour, so an approval shows on the site within the hour
+
+permissions:
+  contents: write              # this job commits one file, data/signals.json, and nothing else
+
+concurrency:
+  group: update-signals
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Export approved signals
+        env:
+          NOCODB_TOKEN: ${{ secrets.NOCODB_TOKEN }}
+        run: python3 scripts/export_signals.py
+      - name: Save the file if it changed
+        run: |
+          git config user.name "BASIN update"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/signals.json
+          git diff --cached --quiet || (git commit -m "Update signals" && git push)

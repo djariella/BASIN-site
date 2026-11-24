@@ -11,7 +11,8 @@ What it exports
 ---------------
 Only signals whose RoutingStatus is "Approved": the ones a person has checked.
 For each: title, our summary, link, dates, lenses, kind, horizon, regions,
-geographic scope, sectors, and the source's name, voice and tier.
+geographic scope, sectors, trends, and the source's name, website, voice and tier.
+The name and description of each trend are exported too.
 
 Every signal should have a place: one or more regions, or a wider scope (Whole of
 Basin, Australia, Asia-Pacific or Global). The export warns about any that has neither. Nothing else leaves the database.
@@ -38,9 +39,9 @@ from pathlib import Path
 
 NOCODB_URL = os.environ.get("NOCODB_URL", "https://tables.safuturesagency.com.au")
 TABLES = {"signals": "mfvzyv1coptbops", "regions": "mnai6n0qtjk00xh", "sectors": "m55zoinuwpq5dey",
-          "sources": "mp7faeuytgv3h5k"}
+          "sources": "mp7faeuytgv3h5k", "trends": "mkmk2swxur1wdrh"}
 # The field on Regions and on Sectors that links back to Signals.
-BACKLINK = {"regions": "cl1kdbjznk1eq2l", "sectors": "ccazbdnbpvxkb3k"}
+BACKLINK = {"regions": "cl1kdbjznk1eq2l", "sectors": "ccazbdnbpvxkb3k", "trends": "cq804jq0rl30eel"}
 OUT = Path(__file__).resolve().parent.parent / "data" / "signals.json"
 
 
@@ -88,14 +89,15 @@ def source_for(url: str, sources: list[dict]) -> dict:
     return best
 
 
-def published_signals() -> list | None:
-    """The signals in the file as it stands, or None if it cannot be read.
+def published() -> dict | None:
+    """The signals and trends in the file as it stands, or None if it cannot be read.
 
     The export compares against this and leaves the file alone when nothing has
     changed, so the site's history shows a change only when the signals change.
     """
     try:
-        return json.loads(OUT.read_text(encoding="utf-8")).get("signals")
+        found = json.loads(OUT.read_text(encoding="utf-8"))
+        return {"signals": found.get("signals"), "trends": found.get("trends")}
     except (OSError, ValueError, AttributeError):
         return None
 
@@ -114,6 +116,9 @@ def main() -> int:
                    fields="Id,Title,Summary,URL,PublishedDate,HarvestedDate,Valence,Horizon,SteepTags,BasinRelevance,GeographicScope")
     sources = rows(f"/api/v2/tables/{TABLES['sources']}/records", token, fields="Domain,Name,Tier,Voice")
     regions, sectors = names_by_signal("regions", token), names_by_signal("sectors", token)
+    trends = names_by_signal("trends", token)
+    trend_notes = [{"name": row.get("Name") or "", "description": row.get("Description") or ""}
+                   for row in rows(f"/api/v2/tables/{TABLES['trends']}/records", token, fields="Name,Description")]
     out = []
     for signal in signals:
         source = source_for(signal.get("URL"), sources)
@@ -124,19 +129,21 @@ def main() -> int:
             "horizon": as_list(signal.get("Horizon")), "steep": as_list(signal.get("SteepTags")),
             "relevance": signal.get("BasinRelevance") or "",
             "regions": sorted(regions.get(signal["Id"], [])), "scope": signal.get("GeographicScope") or "",
-            "sectors": sorted(sectors.get(signal["Id"], [])),
-            "source": source.get("Name") or "", "voice": source.get("Voice") or "", "tier": source.get("Tier"),
+            "sectors": sorted(sectors.get(signal["Id"], [])), "trends": sorted(trends.get(signal["Id"], [])),
+            "source": source.get("Name") or "", "source_domain": source.get("Domain") or "",
+            "voice": source.get("Voice") or "", "tier": source.get("Tier"),
         })
     no_place = [item["id"] for item in out if not item["regions"] and item["scope"] in ("", "Basin region")]
     if no_place:
         print(f"WARNING: {len(no_place)} approved signals have no place. Their ids: {no_place}. "
               "Set GeographicScope or a region for each one in the Signals table.")
-    if published_signals() == out:
+    if published() == {"signals": out, "trends": trend_notes}:
         print(f"No change: the same {len(out)} approved signals are already on the site.")
         return 0
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-                               "count": len(out), "signals": out}, ensure_ascii=False, indent=1), encoding="utf-8")
+                               "count": len(out), "trends": trend_notes, "signals": out},
+                              ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"Exported {len(out)} approved signals to {OUT}")
     return 0
 
